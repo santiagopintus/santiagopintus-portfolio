@@ -1,0 +1,43 @@
+{
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Full-stack",
+    "title2": "Developer",
+    "description": "My goal is to write maintainable, clean and understandable code to process development was enjoyable.",
+    "cta": "Projects"
+  },
+  "sections": {
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education"
+  },
+  "buttons": {
+    "readMore": "Read more",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "metadata": {
+    "title": "Santiago Pintus - Full-stack Developer",
+    "description": "Portfolio of Santiago Pintus, a full-stack developer specializing in React, Next.js, and modern web technologies."
+  },
+  "experience": {
+    "present": "Present",
+    "responsibilities": "Responsibilities"
+  },
+  "education": {
+    "achievements": "Achievements"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "copyright": "© 2025 Santiago Pintus. All rights reserved.",
+    "developedBy": "Developed by"
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "jobTitle": "Frontend Developer",
+    "company": "Pipol SRL",
+    "location": "Buenos Aires, ARG",
+    "startDate": "2024-12-01",
+    "endDate": null,
+    "isCurrent": true,
+    "description": "Developing modern web applications with a focus on performance and user experience",
+    "responsibilities": [
+      "Developed web applications using ReactJS with TypeScript and Redux for state management",
+      "Designed reusable, clean interfaces with StyledComponents and Material UI",
+      "Boosted productivity by utilizing AI development tools",
+      "Ensured quality through refactoring and testing with Playwright and Jest",
+      "Contributed to the maintenance of internal libraries",
+      "Created interactive data visualizations and KPIs using D3.js for analytical dashboards",
+      "Collaborated with multidisciplinary teams on high-quality solutions"
+    ],
+    "technologies": [
+      "ReactJS",
+      "TypeScript",
+      "Redux",
+      "StyledComponents",
+      "Material UI",
+      "D3.js",
+      "Playwright",
+      "Jest"
+    ],
+    "order": 1
+  },
+  {
+    "id": "2",
+    "jobTitle": "Frontend Developer",
+    "company": "Errepar SA",
+    "location": "Buenos Aires, ARG",
+    "startDate": "2022-01-01",
+    "endDate": "2024-12-01",
+    "isCurrent": false,
+    "description": "Led technical implementations and established quality standards for frontend development",
+    "responsibilities": [
+      "Led technical implementations focused on performance and maintainability by prioritizing tasks",
+      "Established quality standards while promoting effective team communication",
+      "Developed components and interfaces using React, TypeScript, and NextJS, following UI/UX designs",
+      "Implemented server-side rendering to improve performance and SEO in dynamic applications",
+      "Designed and implemented a component library, reducing development time by 50%",
+      "Optimized dynamic pages with NextJS, improving performance by 83%"
+    ],
+    "technologies": ["React", "TypeScript", "NextJS", "Server-side Rendering", "UI/UX"],
+    "order": 2
+  }
+]

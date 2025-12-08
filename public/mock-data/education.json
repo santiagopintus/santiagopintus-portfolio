@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "degree": "Bachelor's in Applied Technology",
+    "institution": "Brigham Young University–Idaho",
+    "location": "Online - Idaho, USA",
+    "startDate": "2020-04-01",
+    "endDate": null,
+    "isCurrent": true,
+    "description": "Comprehensive technology program focused on modern software development practices and problem-solving",
+    "achievements": [
+      "Learn and apply new technologies and techniques",
+      "Use HTML5/CSS3, ES6+, and Python",
+      "Convert software requirements into code",
+      "Apply robust design and problem-solving skills",
+      "Strong interpersonal and communication skills"
+    ],
+    "order": 1
+  },
+  {
+    "id": "2",
+    "degree": "Front-end Development",
+    "institution": "Coderhouse",
+    "location": "Online - Bs As, ARG",
+    "startDate": "2021-06-01",
+    "endDate": "2021-12-01",
+    "isCurrent": false,
+    "description": "Specialized training in modern frontend development technologies and best practices",
+    "achievements": [
+      "Construction of complex, dynamic, and scalable sites",
+      "SEO optimization tools",
+      "Modern development with AJAX",
+      "Component development with React JS"
+    ],
+    "order": 2
+  }
+]

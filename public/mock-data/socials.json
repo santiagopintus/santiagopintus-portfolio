@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "platform": "github",
+    "displayName": "GitHub",
+    "url": "https://github.com/santiagopintus",
+    "icon": "faGithub",
+    "order": 1
+  },
+  {
+    "id": "2",
+    "platform": "linkedin",
+    "displayName": "LinkedIn",
+    "url": "https://linkedin.com/in/santiagopintus",
+    "icon": "faLinkedin",
+    "order": 2
+  },
+  {
+    "id": "3",
+    "platform": "telegram",
+    "displayName": "Telegram",
+    "url": "https://t.me/santiagopintus",
+    "icon": "faTelegram",
+    "order": 3
+  },
+  {
+    "id": "4",
+    "platform": "facebook",
+    "displayName": "Facebook",
+    "url": "https://facebook.com/santiagopintus",
+    "icon": "faFacebook",
+    "order": 4
+  },
+  {
+    "id": "5",
+    "platform": "instagram",
+    "displayName": "Instagram",
+    "url": "https://instagram.com/santiagopintus",
+    "icon": "faInstagram",
+    "order": 5
+  }
+]

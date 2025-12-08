@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "title": "E-commerce Platform",
+    "description": "Full-stack e-commerce solution with admin dashboard, product management, and payment integration",
+    "longDescription": "A comprehensive e-commerce platform built with modern technologies. Features include real-time inventory management, advanced analytics dashboard, secure payment processing with Stripe, and a fully responsive design. Implemented server-side rendering for optimal SEO performance.",
+    "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Stripe"],
+    "githubUrl": "https://github.com/santiagopintus/ecommerce-platform",
+    "liveUrl": "https://ecommerce-demo.vercel.app",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/ecommerce-1.jpg",
+        "altText": "E-commerce dashboard view",
+        "order": 1
+      }
+    ],
+    "order": 1,
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-06-20"
+  },
+  {
+    "id": "2",
+    "title": "Task Management Application",
+    "description": "Real-time collaborative task manager with drag-and-drop functionality and team collaboration features",
+    "longDescription": "A powerful task management tool designed for remote teams. Features real-time updates using Socket.io, drag-and-drop Kanban boards, customizable workflows, time tracking, and detailed analytics. Built with a focus on performance and user experience.",
+    "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "Redux"],
+    "githubUrl": "https://github.com/santiagopintus/task-manager",
+    "liveUrl": "https://taskmanager-demo.vercel.app",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/taskmanager-1.jpg",
+        "altText": "Kanban board interface",
+        "order": 1
+      }
+    ],
+    "order": 2,
+    "createdAt": "2023-08-10",
+    "updatedAt": "2024-03-15"
+  },
+  {
+    "id": "3",
+    "title": "Data Visualization Dashboard",
+    "description": "Interactive analytics dashboard with D3.js visualizations for business intelligence and KPI tracking",
+    "longDescription": "An enterprise-grade analytics dashboard that transforms complex data into actionable insights. Features interactive charts, real-time data updates, customizable KPIs, and export capabilities. Optimized for handling large datasets with efficient rendering.",
+    "technologies": ["React", "TypeScript", "D3.js", "Material UI", "Express"],
+    "githubUrl": "https://github.com/santiagopintus/analytics-dashboard",
+    "liveUrl": "https://analytics-demo.vercel.app",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/analytics-1.jpg",
+        "altText": "Analytics dashboard overview",
+        "order": 1
+      }
+    ],
+    "order": 3,
+    "createdAt": "2024-02-20",
+    "updatedAt": "2024-07-10"
+  },
+  {
+    "id": "4",
+    "title": "Component Library",
+    "description": "Reusable React component library with TypeScript, Storybook documentation, and comprehensive testing",
+    "longDescription": "A production-ready component library that accelerated development across multiple projects. Includes 50+ components, comprehensive documentation with Storybook, accessibility compliance (WCAG), and extensive test coverage with Jest and Playwright.",
+    "technologies": ["React", "TypeScript", "Storybook", "Jest", "Playwright"],
+    "githubUrl": "https://github.com/santiagopintus/component-library",
+    "liveUrl": "https://components.vercel.app",
+    "featured": false,
+    "screenshots": [
+      {
+        "url": "/images/projects/components-1.jpg",
+        "altText": "Component library showcase",
+        "order": 1
+      }
+    ],
+    "order": 4,
+    "createdAt": "2023-05-15",
+    "updatedAt": "2024-05-30"
+  }
+]
