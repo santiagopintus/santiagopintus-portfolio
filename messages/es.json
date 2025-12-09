@@ -38,6 +38,8 @@
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "copyright": "© 2025 Santiago Pintus. Todos los derechos reservados.",
-    "developedBy": "Desarrollado por"
+    "developedBy": "Desarrollado por",
+    "openSource": "¿Te gusta este portfolio? Haz un fork y dale una estrella en",
+    "github": "GitHub"
   }
 }

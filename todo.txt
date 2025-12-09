@@ -1,6 +1,6 @@
 To do:
-- Remove the padding of the hero grid items in mobile
-- Create a footer with contact info, social media links, and copyright (add developed by Santiago Pintus with link to portfolio)
-- Project carousel items don't fit the screen in mobile too wide
-- Hamburger menu button should be 48x48px for better accessibility and the icon 24px centered
-- Add an Experience section in the home with a vertical timeline of jobs and education I imagine a dot that is centered vertically in the viewport and as you scroll the dot is fixed and travels through the timeline
+- The dot of experience and education appears from the beginning when the section is not in view. It should appear when the top of the line is in the center (at the same position of the dot). Also it should match the opacity of the line (low at the beginning, high when in the center).
+- The dot of experience and education should appear in mobile as well.
+- Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. At <ExperienceTimeline call in page.tsx (and the same for a key "1")
+- Remove facebook and instagram links from ALL parts of the app. Also my email is santiagopintus@gmail.com update it.
+- Add a small message in the footer to invite other devs to fork and star the repo on GitHub.
