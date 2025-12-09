@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
   faLinkedin,
   faTelegram,
   faFacebook,
   faInstagram,
-} from '@fortawesome/free-brands-svg-icons'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { SocialLink } from '@/types'
+} from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { SocialLink } from '@/types';
 
 const iconMap: Record<string, IconDefinition> = {
   faGithub,
@@ -17,10 +17,10 @@ const iconMap: Record<string, IconDefinition> = {
   faTelegram,
   faFacebook,
   faInstagram,
-}
+};
 
 interface SocialLinksProps {
-  links: SocialLink[]
+  links: SocialLink[];
 }
 
 export default function SocialLinks({ links }: SocialLinksProps) {
@@ -39,5 +39,5 @@ export default function SocialLinks({ links }: SocialLinksProps) {
         </a>
       ))}
     </section>
-  )
+  );
 }

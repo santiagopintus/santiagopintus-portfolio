@@ -1,27 +1,23 @@
-'use client'
+'use client';
 
-import { useTranslations } from 'next-intl'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faGithub,
-  faLinkedin,
-  faTelegram,
-} from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
-import { SocialLink } from '@/types'
+import { useTranslations } from 'next-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons';
+import { SocialLink } from '@/types';
 
 interface FooterProps {
-  socialLinks: SocialLink[]
+  socialLinks: SocialLink[];
 }
 
 const iconMap = {
   faGithub,
   faLinkedin,
   faTelegram,
-}
+};
 
 export default function Footer({ socialLinks }: FooterProps) {
-  const t = useTranslations('footer')
+  const t = useTranslations('footer');
 
   return (
     <footer className="border-t border-white/10 bg-black/50 backdrop-blur-lg mt-20">
@@ -46,7 +42,7 @@ export default function Footer({ socialLinks }: FooterProps) {
             <h3 className="text-xl font-bold mb-4">Social</h3>
             <div className="flex flex-wrap gap-4">
               {socialLinks.map((link) => {
-                const icon = iconMap[link.icon as keyof typeof iconMap]
+                const icon = iconMap[link.icon as keyof typeof iconMap];
                 return (
                   <a
                     key={link.id}
@@ -58,7 +54,7 @@ export default function Footer({ socialLinks }: FooterProps) {
                   >
                     <FontAwesomeIcon icon={icon} className="w-5 h-5" />
                   </a>
-                )
+                );
               })}
             </div>
           </div>
@@ -103,5 +99,5 @@ export default function Footer({ socialLinks }: FooterProps) {
         </div>
       </div>
     </footer>
-  )
+  );
 }

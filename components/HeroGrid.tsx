@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useTranslations } from 'next-intl'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { useTranslations } from 'next-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function HeroGrid() {
-  const t = useTranslations('hero')
+  const t = useTranslations('hero');
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 min-h-[60vh] px-4 md:px-16 py-6 md:py-12">
@@ -34,5 +34,5 @@ export default function HeroGrid() {
         <h1 className="text-5xl md:text-8xl font-bold font-mono">{t('title2')}</h1>
       </div>
     </section>
-  )
+  );
 }

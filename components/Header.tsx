@@ -1,38 +1,38 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
-import { useRouter, usePathname, Link } from '@/i18n/routing'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from '@/types'
+import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname, Link } from '@/i18n/routing';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from '@/types';
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const t = useTranslations('navigation')
-  const locale = useLocale()
-  const router = useRouter()
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navLinks: NavLink[] = [
     { label: t('about'), href: '#about' },
     { label: t('projects'), href: '#projects' },
     { label: t('articles'), href: '#articles' },
     { label: t('contact'), href: '#contact' },
-  ]
+  ];
 
   const languages = [
     { code: 'en', label: 'En' },
     { code: 'es', label: 'Es' },
-  ]
+  ];
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale })
-  }
+    router.replace(pathname, { locale: newLocale });
+  };
 
   const handleMobileLinkClick = () => {
-    setMobileMenuOpen(false)
-  }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -103,5 +103,5 @@ export default function Header() {
         </div>
       )}
     </>
-  )
+  );
 }

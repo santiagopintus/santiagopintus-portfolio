@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import { useTranslations } from 'next-intl'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { Project } from '@/types'
+import { useTranslations } from 'next-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Project } from '@/types';
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 const gradients = [
@@ -14,12 +14,12 @@ const gradients = [
   'from-pink-500/20 to-orange-500/20',
   'from-green-500/20 to-teal-500/20',
   'from-blue-500/20 to-cyan-500/20',
-]
+];
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const t = useTranslations('buttons')
-  const gradientIndex = parseInt(project.id) % gradients.length
-  const gradient = gradients[gradientIndex]
+  const t = useTranslations('buttons');
+  const gradientIndex = parseInt(project.id) % gradients.length;
+  const gradient = gradients[gradientIndex];
 
   return (
     <div
@@ -65,5 +65,5 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

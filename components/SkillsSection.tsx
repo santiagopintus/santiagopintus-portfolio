@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { useTranslations } from 'next-intl'
-import { Skill } from '@/types'
+import { useTranslations } from 'next-intl';
+import { Skill } from '@/types';
 
 interface SkillsSectionProps {
-  skills: Skill[]
+  skills: Skill[];
 }
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
-  const t = useTranslations('sections')
+  const t = useTranslations('sections');
 
   return (
     <section className="px-8 md:px-16 py-12">
@@ -30,5 +30,5 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
         ))}
       </div>
     </section>
-  )
+  );
 }

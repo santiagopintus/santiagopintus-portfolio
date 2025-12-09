@@ -1,34 +1,34 @@
-'use client'
+'use client';
 
-import { useRef } from 'react'
-import { useTranslations } from 'next-intl'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import ProjectCard from './ProjectCard'
-import { Project } from '@/types'
+import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import ProjectCard from './ProjectCard';
+import { Project } from '@/types';
 
 interface ProjectsCarouselProps {
-  projects: Project[]
+  projects: Project[];
 }
 
 export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
-  const t = useTranslations('sections')
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const t = useTranslations('sections');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current
-      const firstCard = container.querySelector('div') as HTMLElement
-      const scrollAmount = firstCard ? firstCard.offsetWidth + 24 : 450 // card width + gap
+      const container = scrollContainerRef.current;
+      const firstCard = container.querySelector('div') as HTMLElement;
+      const scrollAmount = firstCard ? firstCard.offsetWidth + 24 : 450; // card width + gap
       const newScrollPosition =
-        container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount)
+        container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
 
       container.scrollTo({
         left: newScrollPosition,
         behavior: 'smooth',
-      })
+      });
     }
-  }
+  };
 
   return (
     <section id="projects" className="relative px-8 md:px-16 py-12">
@@ -64,5 +64,5 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
         </button>
       </div>
     </section>
-  )
+  );
 }
