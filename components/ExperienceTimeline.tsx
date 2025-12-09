@@ -1,32 +1,32 @@
-'use client'
+'use client';
 
-import { useTranslations } from 'next-intl'
-import { Experience, Education } from '@/types'
-import { useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl';
+import { Experience, Education } from '@/types';
+import { useEffect, useRef, useState } from 'react';
 
 interface ExperienceTimelineProps {
-  experiences: Experience[]
-  education: Education[]
+  experiences: Experience[];
+  education: Education[];
 }
 
 type TimelineItem = {
-  id: string
-  type: 'experience' | 'education'
-  title: string
-  subtitle: string
-  location: string
-  startDate: string
-  endDate: string | null
-  isCurrent: boolean
-  description: string
-  details: string[]
-  technologies?: string[]
-}
+  id: string;
+  type: 'experience' | 'education';
+  title: string;
+  subtitle: string;
+  location: string;
+  startDate: string;
+  endDate: string | null;
+  isCurrent: boolean;
+  description: string;
+  details: string[];
+  technologies?: string[];
+};
 
 export default function ExperienceTimeline({ experiences, education }: ExperienceTimelineProps) {
-  const t = useTranslations()
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [dotOpacity, setDotOpacity] = useState(0)
+  const t = useTranslations();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [dotOpacity, setDotOpacity] = useState(0);
 
   // Combine and sort experiences and education
   const timelineItems: TimelineItem[] = [
@@ -37,7 +37,7 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
       subtitle: exp.company,
       location: exp.location,
       startDate: exp.startDate,
-      endDate: exp.endDate,
+      endDate: exp.endDate || null,
       isCurrent: exp.isCurrent,
       description: exp.description,
       details: exp.responsibilities,
@@ -50,67 +50,64 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
       subtitle: edu.institution,
       location: edu.location,
       startDate: edu.startDate,
-      endDate: edu.endDate,
+      endDate: edu.endDate || null,
       isCurrent: edu.isCurrent,
       description: edu.description,
       details: edu.achievements,
     })),
-  ].sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
+  ].sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime());
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return
+      if (!sectionRef.current) return;
 
-      const section = sectionRef.current
-      const sectionRect = section.getBoundingClientRect()
-      const sectionTop = sectionRect.top
-      const sectionBottom = sectionRect.bottom
-      const sectionHeight = sectionRect.height
-      const viewportCenter = window.innerHeight / 2
+      const section = sectionRef.current;
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionBottom = sectionRect.bottom;
+      const sectionHeight = sectionRect.height;
+      const viewportCenter = window.innerHeight / 2;
 
       // Calculate how far the section has scrolled through the viewport
       // When section top is at viewport center, progress = 0
       // When section bottom is at viewport center, progress = 1
-      const scrollProgress = (viewportCenter - sectionTop) / sectionHeight
+      const scrollProgress = (viewportCenter - sectionTop) / sectionHeight;
 
       // The dot should only be visible when the section is in view
       // It should be brightest when the middle of the section is at viewport center
       if (sectionTop > window.innerHeight || sectionBottom < 0) {
         // Section is completely out of view
-        setDotOpacity(0)
+        setDotOpacity(0);
       } else {
         // Calculate opacity based on distance from center
         // Maximum opacity when scrollProgress is around 0.5 (middle of section)
-        const distanceFromCenter = Math.abs(scrollProgress - 0.5)
-        const maxOpacity = 1
-        const minOpacity = 0
+        const distanceFromCenter = Math.abs(scrollProgress - 0.5);
+        const maxOpacity = 1;
+        const minOpacity = 0;
         // Opacity decreases as we move away from center
-        const opacity = Math.max(
-          minOpacity,
-          maxOpacity - distanceFromCenter * 2
-        )
-        setDotOpacity(Math.max(0, Math.min(1, opacity)))
+        const opacity = Math.max(minOpacity, maxOpacity - distanceFromCenter * 2);
+        setDotOpacity(Math.max(0, Math.min(1, opacity)));
       }
-    }
+    };
 
-    handleScroll() // Initial call
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleScroll)
+    handleScroll(); // Initial call
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleScroll)
-    }
-  }, [])
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   const formatDate = (date: string | null, isCurrent: boolean) => {
-    if (isCurrent || !date) return t('experience.present')
-    const d = new Date(date)
-    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-  }
+    if (isCurrent || !date) return t('experience.present');
+    const d = new Date(date);
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  };
 
   return (
-    <section id="experience" className="relative px-8 md:px-16 py-20" ref={sectionRef}>
+    <section id="experience" className="relative px-8 md:px-16 py-20">
       <h2 className="text-4xl font-bold mb-16 text-center">
         {t('sections.experience')} & {t('sections.education')}
       </h2>
@@ -128,9 +125,9 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-white/30 to-transparent md:-translate-x-1/2"></div>
 
         {/* Timeline Items */}
-        <div className="space-y-12">
+        <div ref={sectionRef} className="space-y-12">
           {timelineItems.map((item, index) => {
-            const isLeft = index % 2 === 0
+            const isLeft = index % 2 === 0;
 
             return (
               <div
@@ -226,10 +223,10 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
                   ></div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
