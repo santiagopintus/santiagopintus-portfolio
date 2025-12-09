@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons';
 import { SocialLink } from '@/types';
+import Container from './Container';
 
 interface FooterProps {
   socialLinks: SocialLink[];
@@ -21,7 +22,7 @@ export default function Footer({ socialLinks }: FooterProps) {
 
   return (
     <footer className="border-t border-white/10 bg-black/50 backdrop-blur-lg mt-20">
-      <div className="px-8 md:px-16 py-12">
+      <Container as="div" className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Contact Info */}
           <div>
@@ -97,7 +98,7 @@ export default function Footer({ socialLinks }: FooterProps) {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

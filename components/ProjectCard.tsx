@@ -1,8 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Arrow from './Arrow';
 import { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -23,10 +22,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div
-      className={`min-w-[280px] md:min-w-[450px] w-[calc(100vw-4rem)] md:w-auto bg-gradient-to-br ${gradient} rounded-2xl overflow-hidden border border-white/10 flex-shrink-0 snap-center`}
+      className={`min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br ${gradient} rounded-2xl overflow-hidden border border-white/10 shrink-0 snap-center`}
     >
       {/* Gradient Image Placeholder */}
-      <div className="h-64 bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 relative flex items-center justify-center">
+      <div className="h-64 bg-linear-to-br from-purple-400 via-pink-400 to-blue-400 relative flex items-center justify-center">
         <div className="w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
       </div>
 
@@ -59,7 +58,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="group flex items-center gap-2 px-6 py-2 bg-white text-black rounded-full hover:gap-4 transition-all"
             >
               <span>{t('readMore')}</span>
-              <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4" />
+              <Arrow className="w-4 h-4" />
             </a>
           )}
         </div>

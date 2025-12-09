@@ -13,8 +13,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-dark-bg: #0a0a0a;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-open-sans);
+  --font-mono: var(--font-fira-code);
 
   /* Custom animations */
   --animate-fade-in: fadeIn 0.5s ease-in-out;
@@ -56,7 +56,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
 }
 
 /* Scrollbar hiding utility for carousel */

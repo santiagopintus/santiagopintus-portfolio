@@ -3,6 +3,9 @@
 import { useTranslations } from 'next-intl';
 import { Experience, Education } from '@/types';
 import { useEffect, useRef, useState } from 'react';
+import SectionTitle from './SectionTitle';
+import { formatDate } from '@/lib/helpers';
+import Container from './Container';
 
 interface ExperienceTimelineProps {
   experiences: Experience[];
@@ -100,29 +103,29 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
     };
   }, []);
 
-  const formatDate = (date: string | null, isCurrent: boolean) => {
+  const formatExperienceDate = (date: string | null, isCurrent: boolean) => {
     if (isCurrent || !date) return t('experience.present');
-    const d = new Date(date);
-    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    return formatDate(date);
   };
 
   return (
-    <section id="experience" className="relative px-8 md:px-16 py-20">
-      <h2 className="text-4xl font-bold mb-16 text-center">
-        {t('sections.experience')} & {t('sections.education')}
-      </h2>
+    <section id="experience" className="relative py-20">
+      <Container>
+        <SectionTitle spacing="large">
+          {t('sections.experience')} & {t('sections.education')}
+        </SectionTitle>
 
-      <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
         {/* Fixed Center Dot */}
         <div
-          className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none transition-opacity duration-300"
+          className="hidden md:block fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none transition-opacity duration-300"
           style={{ opacity: dotOpacity }}
         >
           <div className="w-6 h-6 bg-white rounded-full shadow-lg shadow-white/50"></div>
         </div>
 
         {/* Vertical Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-white/30 to-transparent md:-translate-x-1/2"></div>
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-white/30 to-transparent md:-translate-x-1/2"></div>
 
         {/* Timeline Items */}
         <div ref={sectionRef} className="space-y-12">
@@ -156,8 +159,8 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
                               : 'bg-purple-500/20 text-purple-300'
                           } ${isLeft ? 'md:order-1' : ''}`}
                         >
-                          {formatDate(item.startDate, false)} -{' '}
-                          {formatDate(item.endDate, item.isCurrent)}
+                          {formatExperienceDate(item.startDate, false)} -{' '}
+                          {formatExperienceDate(item.endDate, item.isCurrent)}
                         </span>
                       </div>
                     </div>
@@ -227,6 +230,7 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
           })}
         </div>
       </div>
+      </Container>
     </section>
   );
 }
