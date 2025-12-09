@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Experience, Education } from '@/types'
+import { useEffect, useRef, useState } from 'react'
 
 interface ExperienceTimelineProps {
   experiences: Experience[]
@@ -24,6 +25,8 @@ type TimelineItem = {
 
 export default function ExperienceTimeline({ experiences, education }: ExperienceTimelineProps) {
   const t = useTranslations()
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [dotOpacity, setDotOpacity] = useState(0)
 
   // Combine and sort experiences and education
   const timelineItems: TimelineItem[] = [
@@ -54,6 +57,52 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
     })),
   ].sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return
+
+      const section = sectionRef.current
+      const sectionRect = section.getBoundingClientRect()
+      const sectionTop = sectionRect.top
+      const sectionBottom = sectionRect.bottom
+      const sectionHeight = sectionRect.height
+      const viewportCenter = window.innerHeight / 2
+
+      // Calculate how far the section has scrolled through the viewport
+      // When section top is at viewport center, progress = 0
+      // When section bottom is at viewport center, progress = 1
+      const scrollProgress = (viewportCenter - sectionTop) / sectionHeight
+
+      // The dot should only be visible when the section is in view
+      // It should be brightest when the middle of the section is at viewport center
+      if (sectionTop > window.innerHeight || sectionBottom < 0) {
+        // Section is completely out of view
+        setDotOpacity(0)
+      } else {
+        // Calculate opacity based on distance from center
+        // Maximum opacity when scrollProgress is around 0.5 (middle of section)
+        const distanceFromCenter = Math.abs(scrollProgress - 0.5)
+        const maxOpacity = 1
+        const minOpacity = 0
+        // Opacity decreases as we move away from center
+        const opacity = Math.max(
+          minOpacity,
+          maxOpacity - distanceFromCenter * 2
+        )
+        setDotOpacity(Math.max(0, Math.min(1, opacity)))
+      }
+    }
+
+    handleScroll() // Initial call
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
+
   const formatDate = (date: string | null, isCurrent: boolean) => {
     if (isCurrent || !date) return t('experience.present')
     const d = new Date(date)
@@ -61,14 +110,17 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
   }
 
   return (
-    <section id="experience" className="relative px-8 md:px-16 py-20">
+    <section id="experience" className="relative px-8 md:px-16 py-20" ref={sectionRef}>
       <h2 className="text-4xl font-bold mb-16 text-center">
         {t('sections.experience')} & {t('sections.education')}
       </h2>
 
       <div className="relative max-w-6xl mx-auto">
         {/* Fixed Center Dot */}
-        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none hidden md:block">
+        <div
+          className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none transition-opacity duration-300"
+          style={{ opacity: dotOpacity }}
+        >
           <div className="w-6 h-6 bg-white rounded-full shadow-lg shadow-white/50"></div>
         </div>
 

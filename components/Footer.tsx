@@ -6,10 +6,8 @@ import {
   faGithub,
   faLinkedin,
   faTelegram,
-  faFacebook,
-  faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 import { SocialLink } from '@/types'
 
 interface FooterProps {
@@ -20,8 +18,6 @@ const iconMap = {
   faGithub,
   faLinkedin,
   faTelegram,
-  faFacebook,
-  faInstagram,
 }
 
 export default function Footer({ socialLinks }: FooterProps) {
@@ -36,11 +32,11 @@ export default function Footer({ socialLinks }: FooterProps) {
             <h3 className="text-xl font-bold mb-4">{t('contact')}</h3>
             <div className="space-y-3 text-gray-400">
               <a
-                href="mailto:contact@santiagopintus.com"
+                href="mailto:santiagopintus@gmail.com"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
-                <span>contact@santiagopintus.com</span>
+                <span>santiagopintus@gmail.com</span>
               </a>
             </div>
           </div>
@@ -79,17 +75,31 @@ export default function Footer({ socialLinks }: FooterProps) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
           <p>{t('copyright')}</p>
-          <p>
-            {t('developedBy')}{' '}
-            <a
-              href="https://santiagopintus.com"
-              className="text-white hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Santiago Pintus
-            </a>
-          </p>
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+            <p>
+              {t('developedBy')}{' '}
+              <a
+                href="https://santiagopintus.com"
+                className="text-white hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Santiago Pintus
+              </a>
+            </p>
+            <p className="flex items-center gap-2">
+              {t('openSource')}{' '}
+              <a
+                href="https://github.com/santiagopintus/santiagopintus-portfolio"
+                className="text-white hover:underline inline-flex items-center gap-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('github')}
+                <FontAwesomeIcon icon={faStar} className="w-3 h-3" />
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
