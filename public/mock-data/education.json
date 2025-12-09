@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "edu-1",
     "degree": "Bachelor's in Applied Technology",
     "institution": "Brigham Young University–Idaho",
     "location": "Online - Idaho, USA",
@@ -18,7 +18,7 @@
     "order": 1
   },
   {
-    "id": "2",
+    "id": "edu-2",
     "degree": "Front-end Development",
     "institution": "Coderhouse",
     "location": "Online - Bs As, ARG",
