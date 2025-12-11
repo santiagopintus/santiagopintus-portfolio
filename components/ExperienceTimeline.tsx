@@ -180,16 +180,11 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
                           isLeft ? 'md:list-inside' : 'list-inside'
                         }`}
                       >
-                        {item.details.slice(0, 3).map((detail, idx) => (
+                        {item.details.map((detail, idx) => (
                           <li key={idx} className="leading-relaxed">
                             • {detail}
                           </li>
                         ))}
-                        {item.details.length > 3 && (
-                          <li className="text-gray-500 italic">
-                            +{item.details.length - 3} more...
-                          </li>
-                        )}
                       </ul>
                     </div>
 
