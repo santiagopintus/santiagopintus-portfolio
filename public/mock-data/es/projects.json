@@ -1,0 +1,122 @@
+[
+  {
+    "id": "santiagopintus-portfolio",
+    "title": "Sitio Web de Portafolio 2025",
+    "description": "Portafolio bilingüe moderno con Next.js 16, React 19, y Tailwind CSS v4 con navegación scroll-spy y diseño glassmorphism",
+    "longDescription": "Un sitio web de portafolio de vanguardia que muestra prácticas modernas de desarrollo web y atención al detalle. Construido con el último Next.js 16 App Router y React 19, con Tailwind CSS v4 para estilos. Implementa soporte bilingüe (EN/ES) con next-intl, navegación scroll-spy personalizada con subrayado animado, tema oscuro con efectos glassmorphism, y optimizado para rendimiento con renderizado del lado del servidor. Demuestra experiencia en patrones modernos de React, TypeScript, internacionalización y mejores prácticas de accesibilidad incluyendo cumplimiento WCAG y soporte de movimiento reducido.",
+    "technologies": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "next-intl",
+      "Font Awesome"
+    ],
+    "githubUrl": "https://github.com/santiagopintus/santiagopintus-portfolio",
+    "liveUrl": "https://santiagopintus.dev",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/my-portfolio.png",
+        "altText": "Página de inicio del portafolio con tema oscuro y glassmorphism",
+        "order": 1
+      }
+    ],
+    "order": 1,
+    "createdAt": "2024-12-08",
+    "updatedAt": "2024-12-11"
+  },
+  {
+    "id": "ethrewards-redux-cra",
+    "shortTitle": "Panel EthRewards",
+    "title": "Panel EthRewards",
+    "description": "Panel interactivo con D3.js visualizando recompensas de bloques Ethereum en USD con gestión de estado Redux y datos blockchain en tiempo real",
+    "longDescription": "Una aplicación React que muestra capacidades avanzadas de visualización de datos con D3.js. Construido en un fin de semana como desafío técnico, este proyecto permite a los usuarios analizar la economía blockchain de Ethereum a través de gráficos interactivos que muestran recompensas de bloques convertidas a USD. Características incluyen Redux para gestión de estado global, componentes Material UI para una interfaz pulida, e integración con la API de CoinGecko para datos de mercado en tiempo real. Demuestra competencia en visualización de datos, patrones de gestión de estado, integración de APIs, y prototipado rápido. Incluye pruebas exhaustivas con Vitest.",
+    "technologies": [
+      "React",
+      "Redux",
+      "D3.js",
+      "TypeScript",
+      "Material UI",
+      "Sass",
+      "Vitest",
+      "CoinGecko API"
+    ],
+    "githubUrl": "https://github.com/santiagopintus/ethrewards-redux-cra",
+    "liveUrl": "https://ethrewards-pintus.vercel.app/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/ethrewards.png",
+        "altText": "Panel EthRewards mostrando gráficos D3.js",
+        "order": 1
+      }
+    ],
+    "order": 2,
+    "createdAt": "2024-11-06",
+    "updatedAt": "2024-11-06"
+  },
+  {
+    "id": "cookbook-api",
+    "shortTitle": "API Cookbook",
+    "title": "API Cookbook - GraphQL con Node.js y TypeScript",
+    "description": "API GraphQL con tipos seguros para gestionar datos de libros de cocina y recetas construida con Node.js, Express, y TypeScript",
+    "longDescription": "Una API robusta de Node.js implementando GraphQL para gestión eficiente de datos de recetas y libros de cocina. Características incluyen integración del framework web Express.js y soporte completo de TypeScript para código mantenible y con tipos seguros. Diseñado con patrones modernos de arquitectura de API incluyendo manejo apropiado de errores, validación, y estructuras de datos escalables. Demuestra experiencia en desarrollo backend, diseño de esquemas GraphQL, y mejores prácticas de API para construir servicios listos para producción.",
+    "technologies": ["Node.js", "Express.js", "GraphQL", "TypeScript"],
+    "githubUrl": "https://github.com/santiagopintus/cookbook-api",
+    "liveUrl": null,
+    "featured": false,
+    "screenshots": [
+      {
+        "url": "/images/projects/cookbook-api.jpg",
+        "altText": "Esquema GraphQL de la API Cookbook",
+        "order": 1
+      }
+    ],
+    "order": 3,
+    "createdAt": "2023-03-06",
+    "updatedAt": "2023-03-06"
+  },
+  {
+    "id": "ingles-con-ailu",
+    "shortTitle": "Inglés con Ailu",
+    "title": "Inglés con Ailu - Sitio Web de Coaching de Idiomas",
+    "description": "Sitio web profesional de coaching de inglés con SASS, Bootstrap, y diseño personalizado en Figma para programación y recursos estudiantiles",
+    "longDescription": "Un sitio web integral para una profesora de inglés con perfiles de instructores, información de servicios, y recursos para estudiantes. Diseñado desde cero usando Figma para wireframing, maquetas, y diseño de interacción, luego construido usando preprocesador SASS y framework Bootstrap para una experiencia responsive y móvil. Incluye materiales de práctica descargables, sistema integrado de reserva de clases, y funcionalidad de contacto. Demuestra el proceso completo de diseño y desarrollo desde concepto hasta implementación, con enfoque en experiencia de usuario y accesibilidad.",
+    "technologies": ["HTML", "SASS", "CSS", "Bootstrap", "JavaScript", "Figma"],
+    "githubUrl": "https://github.com/santiagopintus/inglesConAilu-Pintus",
+    "liveUrl": "https://santiagopintus.github.io/inglesConAilu-Pintus/",
+    "featured": false,
+    "screenshots": [
+      {
+        "url": "/images/projects/ingles-con-ailu.png",
+        "altText": "Página de inicio de Inglés con Ailu",
+        "order": 1
+      }
+    ],
+    "order": 4,
+    "createdAt": "2021",
+    "updatedAt": "2021"
+  },
+  {
+    "id": "la-montre",
+    "shortTitle": "La Montre",
+    "title": "La Montre - Sitio E-commerce",
+    "description": "Plataforma e-commerce en JavaScript vanilla con filtrado dinámico de productos, gestión de carrito de compras, y diseño responsive sin frameworks",
+    "longDescription": "Una plataforma e-commerce en JavaScript vanilla puro que demuestra habilidades fundamentales de desarrollo web sin dependencias de frameworks. Las características incluyen filtrado dinámico de productos con actualizaciones en tiempo real, gestión de carrito de compras con funcionalidad agregar/eliminar, y diseño completamente responsive usando CSS Grid y Flexbox. Construido con enfoque en conceptos básicos de JavaScript incluyendo manipulación del DOM, manejo de eventos, local storage para persistencia del carrito, y patrones de programación orientada a objetos. Muestra una base sólida en fundamentos web antes de adoptar frameworks modernos.",
+    "technologies": ["JavaScript", "HTML", "CSS"],
+    "githubUrl": "https://github.com/santiagopintus/laMontre",
+    "liveUrl": "https://santiagopintus.github.io/laMontre/",
+    "featured": false,
+    "screenshots": [
+      {
+        "url": "/images/projects/la-montre.png",
+        "altText": "Catálogo de productos e-commerce de La Montre",
+        "order": 1
+      }
+    ],
+    "order": 5,
+    "createdAt": "2021",
+    "updatedAt": "2021"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "platform": "github",
+    "displayName": "GitHub",
+    "url": "https://github.com/santiagopintus",
+    "icon": "faGithub",
+    "order": 1
+  },
+  {
+    "id": "2",
+    "platform": "linkedin",
+    "displayName": "LinkedIn",
+    "url": "https://linkedin.com/in/santiagopintus",
+    "icon": "faLinkedin",
+    "order": 2
+  },
+  {
+    "id": "3",
+    "platform": "telegram",
+    "displayName": "Telegram",
+    "url": "https://t.me/santiagopintus",
+    "icon": "faTelegram",
+    "order": 3
+  }
+]

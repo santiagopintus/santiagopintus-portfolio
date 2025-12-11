@@ -1,11 +1,17 @@
 [
   {
-    "id": "1",
-    "slug": "santiagopintus-portfolio",
+    "id": "santiagopintus-portfolio",
     "title": "Portfolio Website 2025",
     "description": "Modern bilingual portfolio with Next.js 16, React 19, and Tailwind CSS v4 featuring scroll-spy navigation and glass morphism design",
     "longDescription": "A cutting-edge portfolio website showcasing modern web development practices and attention to detail. Built with the latest Next.js 16 App Router and React 19, featuring Tailwind CSS v4 for styling. Implements bilingual support (EN/ES) with next-intl, custom scroll-spy navigation with animated underline, dark theme with glass morphism effects, and optimized for performance with server-side rendering. Demonstrates expertise in modern React patterns, TypeScript, internationalization, and accessibility best practices including WCAG compliance and reduced motion support.",
-    "technologies": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "next-intl", "Font Awesome"],
+    "technologies": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "next-intl",
+      "Font Awesome"
+    ],
     "githubUrl": "https://github.com/santiagopintus/santiagopintus-portfolio",
     "liveUrl": "https://santiagopintus.dev",
     "featured": true,
@@ -21,12 +27,21 @@
     "updatedAt": "2024-12-11"
   },
   {
-    "id": "2",
-    "slug": "ethrewards-redux-cra",
-    "title": "EthRewards - Ethereum Analytics Dashboard",
+    "id": "ethrewards-redux-cra",
+    "shortTitle": "EthRewards Dashboard",
+    "title": "EthRewards Dashboard ",
     "description": "Interactive D3.js dashboard visualizing Ethereum block rewards in USD with Redux state management and real-time blockchain data",
     "longDescription": "A React application showcasing advanced data visualization capabilities with D3.js. Built in a weekend as a technical challenge, this project enables users to analyze Ethereum blockchain economics through interactive charts displaying block rewards converted to USD. Features Redux for global state management, Material UI components for a polished interface, and integration with CoinGecko API for real-time market data. Demonstrates proficiency in data visualization, state management patterns, API integration, and rapid prototyping. Includes comprehensive testing with Vitest.",
-    "technologies": ["React", "Redux", "D3.js", "TypeScript", "Material UI", "Sass", "Vitest", "CoinGecko API"],
+    "technologies": [
+      "React",
+      "Redux",
+      "D3.js",
+      "TypeScript",
+      "Material UI",
+      "Sass",
+      "Vitest",
+      "CoinGecko API"
+    ],
     "githubUrl": "https://github.com/santiagopintus/ethrewards-redux-cra",
     "liveUrl": "https://ethrewards-pintus.vercel.app/",
     "featured": true,
@@ -42,9 +57,9 @@
     "updatedAt": "2024-11-06"
   },
   {
-    "id": "3",
-    "slug": "cookbook-api",
-    "title": "Cookbook API",
+    "id": "cookbook-api",
+    "shortTitle": "Cookbook API",
+    "title": "Cookbook API - GraphQL with Node.js and TypeScript",
     "description": "Type-safe GraphQL API for managing cookbook data and recipes built with Node.js, Express, and TypeScript",
     "longDescription": "A robust Node.js API implementing GraphQL for efficient recipe and cookbook data management. Features Express.js web framework integration and comprehensive TypeScript support for type-safe, maintainable code. Designed with modern API architecture patterns including proper error handling, validation, and scalable data structures. Demonstrates backend development expertise, GraphQL schema design, and API best practices for building production-ready services.",
     "technologies": ["Node.js", "Express.js", "GraphQL", "TypeScript"],
@@ -63,9 +78,9 @@
     "updatedAt": "2023-03-06"
   },
   {
-    "id": "4",
-    "slug": "ingles-con-ailu",
-    "title": "Inglés con Ailu - Language Teacher Platform",
+    "id": "ingles-con-ailu",
+    "shortTitle": "Inglés con Ailu",
+    "title": "Inglés con Ailu - Language Coaching Website",
     "description": "Professional English language coaching website with SASS, Bootstrap, and custom Figma design for scheduling and student resources",
     "longDescription": "A comprehensive website for an English language teacher featuring instructor profiles, service information, and student resources. Designed from scratch using Figma for wireframing, mockups, and interaction design, then built using SASS preprocessor and Bootstrap framework for a responsive, mobile-friendly experience. Includes downloadable practice materials, integrated class booking system, and contact functionality. Demonstrates full-stack design and development process from concept to implementation, with focus on user experience and accessibility.",
     "technologies": ["HTML", "SASS", "CSS", "Bootstrap", "JavaScript", "Figma"],
@@ -84,8 +99,8 @@
     "updatedAt": "2021"
   },
   {
-    "id": "5",
-    "slug": "la-montre",
+    "id": "la-montre",
+    "shortTitle": "La Montre",
     "title": "La Montre - E-commerce Site",
     "description": "Vanilla JavaScript e-commerce platform featuring dynamic product filtering, shopping cart management, and responsive design without frameworks",
     "longDescription": "A pure vanilla JavaScript e-commerce platform demonstrating fundamental web development skills without framework dependencies. Features include dynamic product filtering with real-time updates, shopping cart management with add/remove functionality, and fully responsive design using CSS Grid and Flexbox. Built with a focus on core JavaScript concepts including DOM manipulation, event handling, local storage for cart persistence, and object-oriented programming patterns. Showcases strong foundation in web fundamentals before adopting modern frameworks.",

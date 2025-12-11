@@ -1,0 +1,52 @@
+[
+  {
+    "id": "exp-1",
+    "jobTitle": "Desarrollador Frontend",
+    "company": "Pipol SRL",
+    "location": "Buenos Aires, ARG",
+    "startDate": "2024-12-01",
+    "endDate": null,
+    "isCurrent": true,
+    "description": "Desarrollo de aplicaciones web modernas con enfoque en rendimiento y experiencia de usuario",
+    "responsibilities": [
+      "Desarrollé aplicaciones web usando ReactJS con TypeScript y Redux para gestión de estado",
+      "Diseñé interfaces reutilizables y limpias con StyledComponents y Material UI",
+      "Incrementé la productividad utilizando herramientas de desarrollo con IA",
+      "Aseguré la calidad mediante refactorización y pruebas con Playwright y Jest",
+      "Contribuí al mantenimiento de bibliotecas internas",
+      "Creé visualizaciones de datos interactivas y KPIs usando D3.js para dashboards analíticos",
+      "Colaboré con equipos multidisciplinarios en soluciones de alta calidad"
+    ],
+    "technologies": [
+      "ReactJS",
+      "TypeScript",
+      "Redux",
+      "StyledComponents",
+      "Material UI",
+      "D3.js",
+      "Playwright",
+      "Jest"
+    ],
+    "order": 1
+  },
+  {
+    "id": "exp-2",
+    "jobTitle": "Desarrollador Frontend",
+    "company": "Errepar SA",
+    "location": "Buenos Aires, ARG",
+    "startDate": "2022-01-01",
+    "endDate": "2024-12-01",
+    "isCurrent": false,
+    "description": "Lideré implementaciones técnicas y establecí estándares de calidad para desarrollo frontend",
+    "responsibilities": [
+      "Lideré implementaciones técnicas enfocadas en rendimiento y mantenibilidad mediante priorización de tareas",
+      "Establecí estándares de calidad promoviendo comunicación efectiva en el equipo",
+      "Desarrollé componentes e interfaces usando React, TypeScript, y NextJS, siguiendo diseños UI/UX",
+      "Implementé renderizado del lado del servidor para mejorar rendimiento y SEO en aplicaciones dinámicas",
+      "Diseñé e implementé una biblioteca de componentes, reduciendo el tiempo de desarrollo en un 50%",
+      "Optimicé páginas dinámicas con NextJS, mejorando el rendimiento en un 83%"
+    ],
+    "technologies": ["React", "TypeScript", "NextJS", "Server-side Rendering", "UI/UX"],
+    "order": 2
+  }
+]
