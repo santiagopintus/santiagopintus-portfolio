@@ -14,6 +14,7 @@ interface ProjectsCarouselProps {
 
 export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
   const t = useTranslations('sections');
+  const tCarousel = useTranslations('projectsCarousel');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -73,7 +74,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             onClick={() => scroll('left')}
             disabled={currentIndex === 0}
             className="hidden md:flex cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 z-10 w-24 h-24 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-transparent"
-            aria-label="Scroll left"
+            aria-label={tCarousel('scrollLeft')}
           >
             <Arrow direction="left" />
           </button>
@@ -83,8 +84,8 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             ref={scrollContainerRef}
             className="overflow-x-auto flex gap-6 scrollbar-hide snap-x snap-mandatory pb-4 md:px-[15%] lg:px-[25%]"
           >
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} priority={index === 0} />
             ))}
           </div>
 
@@ -97,7 +98,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             onClick={() => scroll('right')}
             disabled={currentIndex >= projects.length - 1}
             className="hidden md:flex cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 z-10 w-24 h-24 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-transparent"
-            aria-label="Scroll right"
+            aria-label={tCarousel('scrollRight')}
           >
             <Arrow direction="right" />
           </button>
@@ -110,7 +111,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             onClick={() => scroll('left')}
             disabled={currentIndex === 0}
             className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-white/10 disabled:active:scale-100 disabled:active:bg-transparent"
-            aria-label="Scroll left"
+            aria-label={tCarousel('scrollLeft')}
           >
             <Arrow direction="left" />
           </button>
@@ -124,7 +125,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                 className={`rounded-full transition-all ${
                   index === currentIndex ? 'w-2 h-2 bg-white' : 'w-2 h-2 bg-white/30'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={tCarousel('goToSlide', { slideNumber: index + 1 })}
               />
             ))}
           </div>
@@ -134,7 +135,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             onClick={() => scroll('right')}
             disabled={currentIndex >= projects.length - 1}
             className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-white/10 disabled:active:scale-100 disabled:active:bg-transparent"
-            aria-label="Scroll right"
+            aria-label={tCarousel('scrollRight')}
           >
             <Arrow direction="right" />
           </button>

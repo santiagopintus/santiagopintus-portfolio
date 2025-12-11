@@ -8,35 +8,26 @@ import { Project } from '@/types';
 
 interface ProjectCardProps {
   project: Project;
+  priority?: boolean; // For LCP optimization on first card
 }
 
-const gradients = [
-  'from-purple-500/20 to-blue-500/20',
-  'from-pink-500/20 to-orange-500/20',
-  'from-green-500/20 to-teal-500/20',
-  'from-blue-500/20 to-cyan-500/20',
-];
-
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const t = useTranslations('buttons');
-  const gradientIndex = parseInt(project.id) % gradients.length;
-  const gradient = gradients[gradientIndex];
 
   // Get the first screenshot or use a fallback
   const screenshot = project.screenshots?.[0];
 
   return (
-    <div
-      className={`min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br ${gradient} rounded-2xl overflow-hidden border border-white/10 shrink-0 snap-center`}
-    >
+    <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-[56px] md:rounded-4xl overflow-hidden shrink-0 snap-center relative">
       {/* Project Image */}
-      <div className="h-64 relative bg-gradient-to-br from-gray-800 to-gray-900">
+      <div className="aspect-7/8 md:aspect-2/1 relative bg-linear-to-br from-gray-800 to-gray-900">
         {screenshot ? (
           <Image
             src={screenshot.url}
             alt={screenshot.altText || project.title}
             fill
-            className="object-cover"
+            priority={priority}
+            className="object-cover object-top-left"
             sizes="(max-width: 768px) 100vw, 400px"
           />
         ) : (
@@ -48,9 +39,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4 line-clamp-2">{project.description}</p>
+      <div className="p-5 absolute right-0 bottom-0 md:bottom-auto md:top-0 w-full md:w-2/3 h-2/3 md:h-full bg-dark-bg/90 ">
+        <h3 className="text-2xl mb-2 font-mono line-clamp-1">{project.shortTitle}</h3>
+        <p className="text-white mb-4 line-clamp-2 text-sm">{project.description}</p>
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -70,7 +61,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex gap-3">
           {/* Read More - Link to project details */}
           <Link
-            href={`/projects/${project.slug}`}
+            href={`/projects/${project.id}`}
             aria-label={`${t('readMore')} about ${project.title}`}
             className="group flex items-center gap-2 px-6 py-2 bg-white text-black rounded-full hover:gap-4 transition-all"
           >
