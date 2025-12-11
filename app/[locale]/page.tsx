@@ -8,89 +8,91 @@ import Footer from '@/components/Footer';
 import { SocialLink, Skill, Project, Experience, Education } from '@/types';
 
 // Import mock data (in a real app, this would be from API)
-async function getSocialLinks(): Promise<SocialLink[]> {
+async function getSocialLinks(locale: string): Promise<SocialLink[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/socials.json`,
+    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/${locale}/socials.json`,
     { cache: 'no-store' }
   );
   if (!res.ok) {
     // Fallback to reading from file system in development
     const fs = await import('fs/promises');
     const path = await import('path');
-    const filePath = path.join(process.cwd(), 'public/mock-data/socials.json');
+    const filePath = path.join(process.cwd(), 'public/mock-data', locale, 'socials.json');
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   }
   return res.json();
 }
 
-async function getSkills(): Promise<Skill[]> {
+async function getSkills(locale: string): Promise<Skill[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/skills.json`,
+    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/${locale}/skills.json`,
     { cache: 'no-store' }
   );
   if (!res.ok) {
     const fs = await import('fs/promises');
     const path = await import('path');
-    const filePath = path.join(process.cwd(), 'public/mock-data/skills.json');
+    const filePath = path.join(process.cwd(), 'public/mock-data', locale, 'skills.json');
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   }
   return res.json();
 }
 
-async function getProjects(): Promise<Project[]> {
+async function getProjects(locale: string): Promise<Project[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/projects.json`,
+    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/${locale}/projects.json`,
     { cache: 'no-store' }
   );
   if (!res.ok) {
     const fs = await import('fs/promises');
     const path = await import('path');
-    const filePath = path.join(process.cwd(), 'public/mock-data/projects.json');
+    const filePath = path.join(process.cwd(), 'public/mock-data', locale, 'projects.json');
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   }
   return res.json();
 }
 
-async function getExperience(): Promise<Experience[]> {
+async function getExperience(locale: string): Promise<Experience[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/experience.json`,
+    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/${locale}/experience.json`,
     { cache: 'no-store' }
   );
   if (!res.ok) {
     const fs = await import('fs/promises');
     const path = await import('path');
-    const filePath = path.join(process.cwd(), 'public/mock-data/experience.json');
+    const filePath = path.join(process.cwd(), 'public/mock-data', locale, 'experience.json');
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   }
   return res.json();
 }
 
-async function getEducation(): Promise<Education[]> {
+async function getEducation(locale: string): Promise<Education[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/education.json`,
+    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/mock-data/${locale}/education.json`,
     { cache: 'no-store' }
   );
   if (!res.ok) {
     const fs = await import('fs/promises');
     const path = await import('path');
-    const filePath = path.join(process.cwd(), 'public/mock-data/education.json');
+    const filePath = path.join(process.cwd(), 'public/mock-data', locale, 'education.json');
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   }
   return res.json();
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
   const [socialLinks, skills, projects, experiences, education] = await Promise.all([
-    getSocialLinks(),
-    getSkills(),
-    getProjects(),
-    getExperience(),
-    getEducation(),
+    getSocialLinks(locale),
+    getSkills(locale),
+    getProjects(locale),
+    getExperience(locale),
+    getEducation(locale),
   ]);
 
   return (
