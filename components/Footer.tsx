@@ -29,7 +29,7 @@ export default function Footer({ socialLinks }: FooterProps) {
             <h3 className="text-xl font-bold mb-4">{t('contact')}</h3>
             <div className="space-y-3 text-gray-400">
               <a
-                href="mailto:santiagopintus@gmail.com"
+                href={`mailto:santiagopintus@gmail.com?subject=${t('mailtoSubject')}&body=${t('mailtoBody')}`}
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
@@ -40,7 +40,7 @@ export default function Footer({ socialLinks }: FooterProps) {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Social</h3>
+            <h3 className="text-xl font-bold mb-4">{t('socialHeading')}</h3>
             <div className="flex flex-wrap gap-4">
               {socialLinks.map((link) => {
                 const icon = iconMap[link.icon as keyof typeof iconMap];
@@ -62,10 +62,8 @@ export default function Footer({ socialLinks }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Santiago Pintus</h3>
-            <p className="text-gray-400">
-              Full-stack Developer specializing in React, Next.js, and modern web technologies.
-            </p>
+            <h3 className="text-xl font-bold mb-4">{t('aboutHeading')}</h3>
+            <p className="text-gray-400">{t('aboutDescription')}</p>
           </div>
         </div>
 

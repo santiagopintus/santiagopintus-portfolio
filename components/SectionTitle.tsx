@@ -15,7 +15,7 @@ export default function SectionTitle({
   className = '',
   id,
 }: SectionTitleProps) {
-  const baseClasses = 'text-4xl font-mono';
+  const baseClasses = 'text-2xl md:text-4xl font-mono';
   const spacingClasses = spacing === 'large' ? 'mb-16' : 'mb-8';
   const alignmentClasses = centered ? 'text-center' : '';
 
