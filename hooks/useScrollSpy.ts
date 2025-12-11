@@ -108,7 +108,7 @@ export function useScrollSpy(
     // Create observer
     observerRef.current = new IntersectionObserver(observerCallback, {
       root: null,
-      rootMargin: `-${offset}px 0px -50% 0px`,
+      rootMargin: `-${offset}px 0px -30% 0px`, // Reduced bottom margin for better upward scroll detection
       threshold,
     });
 
