@@ -1,32 +1,5 @@
 [
   {
-    "id": "santiagopintus-portfolio",
-    "title": "Sitio Web de Portafolio 2025",
-    "description": "Portafolio bilingüe moderno con Next.js 16, React 19, y Tailwind CSS v4 con navegación scroll-spy y diseño glassmorphism",
-    "longDescription": "Un sitio web de portafolio de vanguardia que muestra prácticas modernas de desarrollo web y atención al detalle. Construido con el último Next.js 16 App Router y React 19, con Tailwind CSS v4 para estilos. Implementa soporte bilingüe (EN/ES) con next-intl, navegación scroll-spy personalizada con subrayado animado, tema oscuro con efectos glassmorphism, y optimizado para rendimiento con renderizado del lado del servidor. Demuestra experiencia en patrones modernos de React, TypeScript, internacionalización y mejores prácticas de accesibilidad incluyendo cumplimiento WCAG y soporte de movimiento reducido.",
-    "technologies": [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS v4",
-      "next-intl",
-      "Font Awesome"
-    ],
-    "githubUrl": "https://github.com/santiagopintus/santiagopintus-portfolio",
-    "liveUrl": "https://santiagopintus.dev",
-    "featured": true,
-    "screenshots": [
-      {
-        "url": "/images/projects/my-portfolio.png",
-        "altText": "Página de inicio del portafolio con tema oscuro y glassmorphism",
-        "order": 1
-      }
-    ],
-    "order": 1,
-    "createdAt": "2024-12-08",
-    "updatedAt": "2024-12-11"
-  },
-  {
     "id": "ethrewards-redux-cra",
     "shortTitle": "Panel EthRewards",
     "title": "Panel EthRewards",
