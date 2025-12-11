@@ -38,10 +38,32 @@
   "footer": {
     "contact": "Contact",
     "email": "Email",
+    "mailtoSubject": "Inquiry about your Full-stack portfolio",
+    "mailtoBody": "Hello, I have an inquiry about your Full-stack portfolio.",
     "phone": "Phone",
     "copyright": "© 2025 Santiago Pintus. All rights reserved.",
     "developedBy": "Developed by",
     "openSource": "Like this portfolio? Fork it and give it a star on",
-    "github": "GitHub"
+    "github": "GitHub",
+    "socialHeading": "Social",
+    "aboutHeading": "Santiago Pintus",
+    "aboutDescription": "Full-stack Developer specializing in React, Next.js, and modern web technologies."
+  },
+  "header": {
+    "logo": "Santiago Pintus",
+    "languageLabel": "Language",
+    "toggleMenu": "Toggle menu"
+  },
+  "projectDetails": {
+    "screenshotPlaceholder": "Screenshot placeholder",
+    "viewOnGithub": "View on GitHub",
+    "visitLiveProject": "Visit live project",
+    "viewSourceCode": "View source code for {projectTitle} on GitHub",
+    "visitLiveVersion": "Visit live version of {projectTitle}"
+  },
+  "projectsCarousel": {
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "goToSlide": "Go to slide {slideNumber}"
   }
 }

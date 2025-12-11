@@ -38,10 +38,32 @@
   "footer": {
     "contact": "Contacto",
     "email": "Correo electrónico",
+    "mailtoSubject": "Consulta sobre tu portfolio de Full-stack",
+    "mailtoBody": "Buenos días, tengo una consulta sobre tu portfolio de Full-stack.",
     "phone": "Teléfono",
     "copyright": "© 2025 Santiago Pintus. Todos los derechos reservados.",
     "developedBy": "Desarrollado por",
     "openSource": "¿Te gusta este portfolio? Haz un fork y dale una estrella en",
-    "github": "GitHub"
+    "github": "GitHub",
+    "socialHeading": "Redes",
+    "aboutHeading": "Santiago Pintus",
+    "aboutDescription": "Desarrollador Full-stack especializado en React, Next.js y tecnologías web modernas."
+  },
+  "header": {
+    "logo": "Santiago Pintus",
+    "languageLabel": "Idioma",
+    "toggleMenu": "Abrir menú"
+  },
+  "projectDetails": {
+    "screenshotPlaceholder": "Imagen de muestra",
+    "viewOnGithub": "Ver en GitHub",
+    "visitLiveProject": "Visitar proyecto en vivo",
+    "viewSourceCode": "Ver código fuente de {projectTitle} en GitHub",
+    "visitLiveVersion": "Visitar versión en vivo de {projectTitle}"
+  },
+  "projectsCarousel": {
+    "scrollLeft": "Desplazar izquierda",
+    "scrollRight": "Desplazar derecha",
+    "goToSlide": "Ir a diapositiva {slideNumber}"
   }
 }
