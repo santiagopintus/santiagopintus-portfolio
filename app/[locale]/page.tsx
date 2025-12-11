@@ -102,8 +102,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <HeroGrid />
         <SocialLinks links={socialLinks} />
         <ProjectsCarousel projects={projects} />
-        <SkillsSection skills={skills} />
         <ExperienceTimeline experiences={experiences} education={education} />
+        <SkillsSection skills={skills} />
       </main>
       <Footer socialLinks={socialLinks} />
     </div>

@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 async function getSocialLinks(): Promise<SocialLink[]> {
-  const filePath = path.join(process.cwd(), 'public', 'mock-data', 'socials.json');
+  const filePath = path.join(process.cwd(), 'public', 'mock-data', 'en', 'socials.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(fileContents);
 }
