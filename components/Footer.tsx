@@ -21,7 +21,7 @@ export default function Footer({ socialLinks }: FooterProps) {
   const t = useTranslations('footer');
 
   return (
-    <footer className="border-t border-white/10 bg-black/50 backdrop-blur-lg mt-20">
+    <footer id="contact" className="border-t border-white/10 bg-black/50 backdrop-blur-lg mt-20">
       <Container as="div" className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Contact Info */}
@@ -84,7 +84,7 @@ export default function Footer({ socialLinks }: FooterProps) {
                 Santiago Pintus
               </a>
             </p>
-            <p className="flex items-center gap-2">
+            <p>
               {t('openSource')}{' '}
               <a
                 href="https://github.com/santiagopintus/santiagopintus-portfolio"

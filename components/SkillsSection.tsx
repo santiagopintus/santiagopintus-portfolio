@@ -13,7 +13,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
   const t = useTranslations('sections');
 
   return (
-    <section className="py-12">
+    <section id="skills" className="py-12">
       <Container>
         <SectionTitle>{t('skills')}</SectionTitle>
 
@@ -25,7 +25,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
             >
               <p className="text-xs md:text-base">{skill.name}</p>
               {skill.category && (
-                <span className="text-[10px] md:text-xs text-gray-500 mt-1 inline-block">
+                <span className="text-[10px] md:text-xs text-white/60 mt-1 inline-block">
                   {skill.category}
                 </span>
               )}

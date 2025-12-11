@@ -19,7 +19,7 @@ const HeroGrid = () => {
   const t = useTranslations('hero');
 
   return (
-    <section className="py-6 md:py-12">
+    <section id="about" className="py-6 md:py-12">
       <Container className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
         {/* Top Left - "Full-stack" - 7/12 columns */}
         <div className="order-1 md:col-span-7 rounded-2xl flex items-center justify-start">

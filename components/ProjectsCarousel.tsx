@@ -72,7 +72,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           <button
             onClick={() => scroll('left')}
             disabled={currentIndex === 0}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+            className="hidden md:flex cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 z-10 w-24 h-24 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-transparent"
             aria-label="Scroll left"
           >
             <Arrow direction="left" />
@@ -96,7 +96,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           <button
             onClick={() => scroll('right')}
             disabled={currentIndex >= projects.length - 1}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+            className="hidden md:flex cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 z-10 w-24 h-24 border border-white/20 rounded-full items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-transparent"
             aria-label="Scroll right"
           >
             <Arrow direction="right" />
@@ -109,7 +109,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           <button
             onClick={() => scroll('left')}
             disabled={currentIndex === 0}
-            className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+            className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-white/10 disabled:active:scale-100 disabled:active:bg-transparent"
             aria-label="Scroll left"
           >
             <Arrow direction="left" />
@@ -133,7 +133,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           <button
             onClick={() => scroll('right')}
             disabled={currentIndex >= projects.length - 1}
-            className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+            className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent active:bg-white/10 disabled:active:scale-100 disabled:active:bg-transparent"
             aria-label="Scroll right"
           >
             <Arrow direction="right" />
