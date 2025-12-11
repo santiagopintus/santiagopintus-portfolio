@@ -14,7 +14,7 @@ export interface SocialLink {
 
 export interface Project {
   id: string;
-  slug: string;
+  shortTitle: string;
   title: string;
   description: string;
   longDescription?: string;
@@ -33,6 +33,7 @@ export interface ProjectScreenshot {
   projectId?: string;
   url: string;
   altText: string;
+  aspectRatio?: string;
   order: number;
 }
 
