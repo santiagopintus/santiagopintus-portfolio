@@ -82,7 +82,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="overflow-x-auto flex gap-6 scrollbar-hide snap-x snap-mandatory pb-4 md:px-[15%] lg:px-[25%]"
+            className="overflow-x-auto flex gap-6 scrollbar-hide snap-x snap-mandatory pb-4 md:px-[15%] lg:px-[20%] xl:px-[30%]"
           >
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} priority={index === 0} />
@@ -105,7 +105,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
         </div>
 
         {/* Mobile Controls - Below carousel */}
-        <div className="md:hidden relative flex items-center justify-between mt-6">
+        <div className="md:hidden relative flex items-center justify-between mt-2">
           {/* Left Arrow */}
           <button
             onClick={() => scroll('left')}

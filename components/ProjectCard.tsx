@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import Arrow from './Arrow';
 import { Project } from '@/types';
+import { useState } from 'react';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,35 +14,52 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const t = useTranslations('buttons');
+  const [imageHovering, setImageHovering] = useState(false);
 
   // Get the first screenshot or use a fallback
   const screenshot = project.screenshots?.[0];
 
   return (
-    <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-[56px] md:rounded-4xl overflow-hidden shrink-0 snap-center relative">
+    <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-[56px] md:rounded-4xl overflow-hidden shrink-0 snap-center relative border border-white/20">
       {/* Project Image */}
-      <div className="aspect-7/8 md:aspect-2/1 relative bg-linear-to-br from-gray-800 to-gray-900">
-        {screenshot ? (
-          <Image
-            src={screenshot.url}
-            alt={screenshot.altText || project.title}
-            fill
-            priority={priority}
-            className="object-cover object-top-left"
-            sizes="(max-width: 768px) 100vw, 400px"
-          />
-        ) : (
-          // Fallback gradient if no image
-          <div className="h-full bg-linear-to-br from-purple-400 via-pink-400 to-blue-400 flex items-center justify-center">
-            <div className="w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
-          </div>
-        )}
-      </div>
+      <Link href={`/projects/${project.id}`} aria-label={`${t('readMore')} about ${project.title}`}>
+        <div className="aspect-7/8 md:aspect-2/1 relative bg-linear-to-br from-gray-800 to-gray-900">
+          {screenshot ? (
+            <Image
+              src={screenshot.url}
+              alt={screenshot.altText || project.title}
+              fill
+              priority={priority}
+              className="object-cover object-top-left"
+              sizes="(max-width: 768px) 100vw, 400px"
+              onMouseEnter={() => setImageHovering(true)}
+              onMouseLeave={() => setImageHovering(false)}
+            />
+          ) : (
+            // Fallback gradient if no image
+            <div className="h-full bg-linear-to-br from-purple-400 via-pink-400 to-blue-400 flex items-center justify-center">
+              <div className="w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
+            </div>
+          )}
+        </div>
+      </Link>
+
+      {/* Transparent overlay - brings content back when hovered */}
+      {imageHovering && (
+        <div
+          className="absolute right-0 bottom-0 md:bottom-auto md:top-0 w-full md:w-2/3 h-2/3 md:h-full pointer-events-auto z-10"
+          onMouseEnter={() => setImageHovering(false)}
+        />
+      )}
 
       {/* Content */}
-      <div className="p-5 absolute right-0 bottom-0 md:bottom-auto md:top-0 w-full md:w-2/3 h-2/3 md:h-full bg-dark-bg/90 ">
+      <div
+        className={`p-5 absolute right-0 bottom-0 md:bottom-auto md:top-0 w-full md:w-2/3 h-2/3 md:h-full bg-dark-bg ${imageHovering ? 'md:translate-x-full' : 'md:translate-x-0'} md:border-l border-white/20 transition-transform duration-600`}
+      >
         <h3 className="text-2xl mb-2 font-mono line-clamp-1">{project.shortTitle}</h3>
-        <p className="text-white mb-4 line-clamp-2 text-sm">{project.description}</p>
+        <p className="text-white mb-4 line-clamp-3 lg:line-clamp-4 text-sm">
+          {project.description}
+        </p>
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">

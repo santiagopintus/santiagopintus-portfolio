@@ -55,6 +55,7 @@
     "toggleMenu": "Toggle menu"
   },
   "projectDetails": {
+    "backToProjects": "Back to Projects",
     "screenshotPlaceholder": "Screenshot placeholder",
     "viewOnGithub": "View on GitHub",
     "visitLiveProject": "Visit live project",

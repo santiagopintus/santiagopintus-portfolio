@@ -55,6 +55,7 @@
     "toggleMenu": "Abrir menú"
   },
   "projectDetails": {
+    "backToProjects": "Volver a Proyectos",
     "screenshotPlaceholder": "Imagen de muestra",
     "viewOnGithub": "Ver en GitHub",
     "visitLiveProject": "Visitar proyecto en vivo",

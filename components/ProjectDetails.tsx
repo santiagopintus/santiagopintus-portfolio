@@ -7,19 +7,23 @@ import Arrow from './Arrow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Container from './Container';
+import BackButton from './BackButton';
 
 interface ProjectDetailsProps {
   project: Project;
 }
 
 export default function ProjectDetails({ project }: ProjectDetailsProps) {
-  const t = useTranslations('buttons');
   const tProject = useTranslations('projectDetails');
   const screenshot = project.screenshots?.[0];
 
   return (
     <section className="py-20">
       <Container>
+        <div className="mb-6">
+          <BackButton href="/#projects" label={tProject('backToProjects')} />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative">
           {/* Left Side - Image Gallery */}
           {/* Main Screenshot */}
@@ -39,7 +43,9 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
               // Fallback if no image
               <div className="h-full bg-linear-to-br from-purple-400 via-pink-400 to-blue-400 flex items-center justify-center">
                 <div className="w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
-                <p className="absolute text-white/60 text-sm">{tProject('screenshotPlaceholder')}</p>
+                <p className="absolute text-white/60 text-sm">
+                  {tProject('screenshotPlaceholder')}
+                </p>
               </div>
             )}
           </div>
