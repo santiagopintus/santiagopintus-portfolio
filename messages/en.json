@@ -2,7 +2,8 @@
   "navigation": {
     "about": "About",
     "projects": "Projects",
-    "articles": "Articles",
+    "experience": "Experience",
+    "skills": "Skills",
     "contact": "Contact"
   },
   "hero": {
@@ -19,6 +20,7 @@
   },
   "buttons": {
     "readMore": "Read more",
+    "visitProject": "Visit project",
     "viewProject": "View Project",
     "viewCode": "View Code"
   },

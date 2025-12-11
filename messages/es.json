@@ -2,7 +2,8 @@
   "navigation": {
     "about": "Acerca de",
     "projects": "Proyectos",
-    "articles": "Artículos",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
     "contact": "Contacto"
   },
   "hero": {
@@ -19,6 +20,7 @@
   },
   "buttons": {
     "readMore": "Leer más",
+    "visitProject": "Visitar proyecto",
     "viewProject": "Ver Proyecto",
     "viewCode": "Ver Código"
   },
