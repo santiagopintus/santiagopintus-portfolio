@@ -1,11 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/routing';
 import { NavLink } from '@/types';
 import HamburgerIcon from './HamburgerIcon';
 import Container from './Container';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
+import { useNavUnderline } from '@/hooks/useNavUnderline';
+import { NAV_SECTIONS } from '@/constants/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,6 +17,22 @@ export default function Header() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+
+  // Navigation links configuration - generated from NAV_SECTIONS constant
+  const navLinks: NavLink[] = NAV_SECTIONS.map((section) => ({
+    label: t(section),
+    href: `#${section}`,
+  }));
+
+  // Scroll-spy navigation
+  const navRef = useRef<HTMLElement>(null);
+  const { activeSection, setActiveSection } = useScrollSpy(NAV_SECTIONS);
+  const underlinePosition = useNavUnderline(activeSection, navRef);
+
+  // Handle nav link click - immediate underline feedback
+  const handleNavClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+  };
 
   // Detect scroll to toggle header background
   useEffect(() => {
@@ -26,12 +45,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks: NavLink[] = [
-    { label: t('about'), href: '#about' },
-    { label: t('projects'), href: '#projects' },
-    { label: t('articles'), href: '#articles' },
-    { label: t('contact'), href: '#contact' },
-  ];
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const languages = [
     { code: 'en', label: 'En' },
@@ -50,9 +75,7 @@ export default function Header() {
     <>
       <header
         className={`sticky top-0 z-50 h-20 transition-all duration-300 ${
-          isScrolled
-            ? 'backdrop-blur-lg bg-black/50 border-b border-white/10'
-            : 'bg-transparent'
+          isScrolled ? 'backdrop-blur-lg bg-black/50 border-b border-white/10' : 'bg-transparent'
         }`}
       >
         <Container className="h-full flex items-center justify-between">
@@ -65,16 +88,28 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav ref={navRef} className="hidden md:flex items-center relative">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm hover:text-white/80 transition-colors"
+                data-section={link.href.slice(1)}
+                onClick={() => handleNavClick(link.href.slice(1))}
+                className="text-sm transition-opacity hover:opacity-80 p-4"
               >
                 {link.label}
               </a>
             ))}
+            {/* Animated underline */}
+            {underlinePosition && (
+              <span
+                className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
+                style={{
+                  left: `${underlinePosition.left}px`,
+                  width: `${underlinePosition.width}px`,
+                }}
+              />
+            )}
           </nav>
 
           {/* Right Side: Language Selector (Desktop) + Hamburger (Mobile) */}
@@ -108,46 +143,63 @@ export default function Header() {
         </Container>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay & Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-20 left-0 right-0 z-40 backdrop-blur-lg bg-black/95 border-b border-white/10 animate-slideDown">
-          <Container as="nav" className="flex flex-col py-6">
-            {/* Navigation Links */}
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={handleMobileLinkClick}
-                className="py-4 text-lg hover:text-white/80 transition-colors border-b border-white/10"
-              >
-                {link.label}
-              </a>
-            ))}
+        <>
+          {/* Overlay */}
+          <div
+            className="md:hidden fixed inset-0 top-20 z-30 bg-black/60 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-            {/* Language Selector - Mobile Only */}
-            <div className="py-6 border-t border-white/10 mt-4">
-              <p className="text-sm text-white/60 mb-3">Language</p>
-              <div className="flex items-center gap-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      handleLanguageChange(lang.code);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`cursor-pointer px-4 py-2 text-sm rounded-md transition-all ${
-                      locale === lang.code
-                        ? 'bg-white text-black font-medium'
-                        : 'text-white/60 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    {lang.label}
-                  </button>
-                ))}
+          {/* Mobile Menu */}
+          <div className="md:hidden fixed top-20 left-0 right-0 z-40 backdrop-blur-lg bg-black/50 border-b-2 border-white/30 shadow-2xl animate-slideDown">
+            <Container as="nav" className="flex flex-col py-6">
+              {/* Navigation Links */}
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => {
+                    handleNavClick(link.href.slice(1));
+                    handleMobileLinkClick();
+                  }}
+                  className={`py-4 text-lg transition-colors border-b border-white/10 ${
+                    activeSection === link.href.slice(1)
+                      ? 'text-white font-medium'
+                      : 'text-white/60 hover:text-white/80'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              {/* Language Selector - Mobile Only */}
+              <div className="py-6 border-t border-white/10 mt-4">
+                <p className="text-sm text-white/60 mb-3">Language</p>
+                <div className="flex items-center gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        handleLanguageChange(lang.code);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`cursor-pointer px-4 py-2 text-sm rounded-md transition-all ${
+                        locale === lang.code
+                          ? 'bg-white text-black font-medium'
+                          : 'text-white/60 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          </Container>
-        </div>
+            </Container>
+          </div>
+        </>
       )}
     </>
   );
