@@ -25,13 +25,13 @@ export default function Header() {
     href: `/${locale}#${section}`,
   }));
 
-  // Scroll-spy navigation
-  const navRef = useRef<HTMLElement>(null);
-  const { activeSection, setActiveSection } = useScrollSpy(NAV_SECTIONS);
-  const underlinePosition = useNavUnderline(activeSection, navRef);
-
   // Check if we're on the home page
   const isHomePage = pathname === '/';
+
+  // Scroll-spy navigation - only enabled on home page
+  const navRef = useRef<HTMLElement>(null);
+  const { activeSection, setActiveSection } = useScrollSpy(isHomePage ? NAV_SECTIONS : []);
+  const underlinePosition = useNavUnderline(isHomePage ? activeSection : null, navRef);
 
   // Handle nav link click - immediate underline feedback and smooth scroll
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -124,8 +124,8 @@ export default function Header() {
                 </a>
               );
             })}
-            {/* Animated underline */}
-            {underlinePosition && (
+            {/* Animated underline - only on home page */}
+            {isHomePage && underlinePosition && (
               <span
                 className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
                 style={{
