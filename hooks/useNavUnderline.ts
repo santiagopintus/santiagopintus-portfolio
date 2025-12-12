@@ -6,13 +6,13 @@ interface UnderlinePosition {
 }
 
 export function useNavUnderline(
-  activeSection: string,
+  activeSection: string | null,
   navContainerRef: RefObject<HTMLElement | null>
 ): UnderlinePosition | null {
   const [position, setPosition] = useState<UnderlinePosition | null>(null);
 
   const calculatePosition = useCallback(() => {
-    if (!navContainerRef.current) return;
+    if (!navContainerRef.current || !activeSection) return;
 
     // Find active link element
     const activeLinkElement = navContainerRef.current.querySelector(
