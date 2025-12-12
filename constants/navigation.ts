@@ -4,6 +4,7 @@
 // 2. Scroll spy detection
 // 3. Translations (must also add to messages/*.json)
 
-export const NAV_SECTIONS = ['about', 'projects', 'skills', 'experience', 'contact'] as const;
+//ORDER MATTERS - this array defines the order of sections in the nav
+export const NAV_SECTIONS = ['about', 'projects', 'experience', 'skills', 'contact'] as const;
 
 export type NavSection = (typeof NAV_SECTIONS)[number];
