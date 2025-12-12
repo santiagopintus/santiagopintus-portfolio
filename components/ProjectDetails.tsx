@@ -96,9 +96,10 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={tProject('visitLiveVersion', { projectTitle: project.title })}
-                  className="group flex items-center justify-center w-14 h-14 bg-white text-black hover:bg-white/90 rounded-full transition-all shadow-lg hover:shadow-xl"
+                  className="group flex items-center justify-between gap-2 w-fit h-14 bg-white text-black hover:bg-white/90 rounded-full transition-all shadow-lg hover:shadow-xl px-6 hover:gap-4"
                   title={tProject('visitLiveProject')}
                 >
+                  <span className="font-medium">{tProject('visitLiveProject')}</span>
                   <Arrow className="w-5 h-5 -rotate-45" />
                 </a>
               )}
