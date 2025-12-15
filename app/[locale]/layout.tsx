@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@/lib/fontawesome';
 import { Locales } from '@/i18n/request';
+import CursorGradient from '@/components/CursorGradient';
 
 // Prevent Font Awesome from auto-adding CSS
 config.autoAddCss = false;
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="./icon.png" />
       </head>
       <body className={`${openSans.variable} ${firaCode.variable} antialiased`}>
+        <CursorGradient />
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
