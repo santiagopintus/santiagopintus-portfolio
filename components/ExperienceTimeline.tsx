@@ -116,115 +116,115 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
         </SectionTitle>
 
         <div className="relative max-w-6xl mx-auto">
-        {/* Fixed Center Dot */}
-        <div
-          className="hidden md:block fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none transition-opacity duration-300"
-          style={{ opacity: dotOpacity }}
-        >
-          <div className="w-6 h-6 bg-white rounded-full shadow-lg shadow-white/50"></div>
-        </div>
+          {/* Fixed Center Dot */}
+          <div
+            className="hidden md:block fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none transition-opacity duration-300"
+            style={{ opacity: dotOpacity }}
+          >
+            <div className="w-6 h-6 bg-white rounded-full shadow-lg shadow-white/50"></div>
+          </div>
 
-        {/* Vertical Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-white/30 to-transparent md:-translate-x-1/2"></div>
+          {/* Vertical Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-white/30 to-transparent md:-translate-x-1/2"></div>
 
-        {/* Timeline Items */}
-        <div ref={sectionRef} className="space-y-12">
-          {timelineItems.map((item, index) => {
-            const isLeft = index % 2 === 0;
+          {/* Timeline Items */}
+          <div ref={sectionRef} className="space-y-12">
+            {timelineItems.map((item, index) => {
+              const isLeft = index % 2 === 0;
 
-            return (
-              <div
-                key={item.id}
-                className={`relative flex flex-col md:flex-row gap-8 ${
-                  isLeft ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Content */}
+              return (
                 <div
-                  className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'} pl-12 md:pl-0`}
+                  key={item.id}
+                  className={`relative flex flex-col md:flex-row gap-8 ${
+                    isLeft ? 'md:flex-row-reverse' : ''
+                  }`}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
-                    {/* Header */}
-                    <div className="mb-4">
-                      <div className="flex items-start justify-between flex-col md:flex-row gap-2">
-                        <div className={isLeft ? 'md:order-2' : ''}>
-                          <h3 className="text-2xl font-bold mb-1">{item.title}</h3>
-                          <p className="text-lg text-gray-400 mb-1">{item.subtitle}</p>
-                          <p className="text-sm text-gray-500">{item.location}</p>
-                        </div>
-                        <span
-                          className={`text-sm px-3 py-1 rounded-full ${
-                            item.type === 'experience'
-                              ? 'bg-blue-500/20 text-blue-300'
-                              : 'bg-purple-500/20 text-purple-300'
-                          } ${isLeft ? 'md:order-1' : ''}`}
-                        >
-                          {formatExperienceDate(item.startDate, false)} -{' '}
-                          {formatExperienceDate(item.endDate, item.isCurrent)}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-300 mb-4">{item.description}</p>
-
-                    {/* Details */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-gray-400 mb-2">
-                        {item.type === 'experience'
-                          ? t('experience.responsibilities')
-                          : t('education.achievements')}
-                      </h4>
-                      <ul
-                        className={`space-y-2 text-sm text-gray-400 ${
-                          isLeft ? 'md:list-inside' : 'list-inside'
-                        }`}
-                      >
-                        {item.details.map((detail, idx) => (
-                          <li key={idx} className="leading-relaxed">
-                            • {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    {item.technologies && (
-                      <div className="flex flex-wrap gap-2">
-                        {item.technologies.slice(0, 4).map((tech, idx) => (
+                  {/* Content */}
+                  <div
+                    className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'} pl-12 md:pl-0`}
+                  >
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
+                      {/* Header */}
+                      <div className="mb-4">
+                        <div className="flex items-start justify-between flex-col md:flex-row gap-2">
+                          <div className={isLeft ? 'md:order-2' : ''}>
+                            <h3 className="text-2xl font-bold mb-1">{item.title}</h3>
+                            <p className="text-lg text-gray-400 mb-1 font-bold">{item.subtitle}</p>
+                            <p className="text-sm text-gray-400">{item.location}</p>
+                          </div>
                           <span
-                            key={idx}
-                            className="text-xs px-3 py-1 bg-white/10 rounded-full text-gray-300"
+                            className={`text-sm px-3 py-1 rounded-full ${
+                              item.type === 'experience'
+                                ? 'bg-blue-500/20 text-blue-300'
+                                : 'bg-purple-500/20 text-purple-300'
+                            } ${isLeft ? 'md:order-1' : ''}`}
                           >
-                            {tech}
+                            {formatExperienceDate(item.startDate, false)} -{' '}
+                            {formatExperienceDate(item.endDate, item.isCurrent)}
                           </span>
-                        ))}
-                        {item.technologies.length > 4 && (
-                          <span className="text-xs px-3 py-1 bg-white/10 rounded-full text-gray-500">
-                            +{item.technologies.length - 4}
-                          </span>
-                        )}
+                        </div>
                       </div>
-                    )}
+
+                      {/* Description */}
+                      <p className="text-gray-300 mb-4">{item.description}</p>
+
+                      {/* Details */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-gray-400 mb-2">
+                          {item.type === 'experience'
+                            ? t('experience.responsibilities')
+                            : t('education.achievements')}
+                        </h4>
+                        <ul
+                          className={`space-y-2 text-sm text-gray-400 ${
+                            isLeft ? 'md:list-inside' : 'list-inside'
+                          }`}
+                        >
+                          {item.details.map((detail, idx) => (
+                            <li key={idx} className="leading-relaxed">
+                              • {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Technologies */}
+                      {item.technologies && (
+                        <div className="flex flex-wrap gap-2">
+                          {item.technologies.slice(0, 4).map((tech, idx) => (
+                            <span
+                              key={idx}
+                              className="text-xs px-3 py-1 bg-white/10 rounded-full text-gray-300"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                          {item.technologies.length > 4 && (
+                            <span className="text-xs px-3 py-1 bg-white/10 rounded-full text-gray-300">
+                              +{item.technologies.length - 4}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Spacer for the other side on desktop */}
+                  <div className="flex-1 hidden md:block"></div>
+
+                  {/* Timeline Dot (Mobile Only - on the left) */}
+                  <div className="absolute left-4 top-6 -translate-x-1/2 md:hidden">
+                    <div
+                      className={`w-4 h-4 rounded-full ${
+                        item.type === 'experience' ? 'bg-blue-500' : 'bg-purple-500'
+                      }`}
+                    ></div>
                   </div>
                 </div>
-
-                {/* Spacer for the other side on desktop */}
-                <div className="flex-1 hidden md:block"></div>
-
-                {/* Timeline Dot (Mobile Only - on the left) */}
-                <div className="absolute left-4 top-6 -translate-x-1/2 md:hidden">
-                  <div
-                    className={`w-4 h-4 rounded-full ${
-                      item.type === 'experience' ? 'bg-blue-500' : 'bg-purple-500'
-                    }`}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
       </Container>
     </section>
   );
