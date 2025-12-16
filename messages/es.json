@@ -1,25 +1,34 @@
 {
   "navigation": {
-    "about": "Acerca de",
+    "start": "Inicio",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "skills": "Habilidades",
+    "about": "Acerca de mí",
     "contact": "Contacto"
   },
   "hero": {
     "title1": "Desarrollador",
     "title2": "Full-stack",
-    "description": "Creo aplicaciones de <bold>alto rendimiento</bold> con enfoque en arquitectura limpia y <bold>experiencias de usuario excepcionales</bold>. Mi objetivo es escribir código que no solo sea funcional, sino mantenible y <bold>agradable de trabajar</bold>.",
+    "description": "Creo aplicaciones de <bold>alto rendimiento</bold> con enfoque en arquitectura limpia y experiencias de usuario excepcionales. Me apasiona <bold>diseñar soluciones escalables</bold> y resolver problemas complejos con <bold>código claro y bien estructurado</bold>.",
     "cta": "Proyectos"
   },
   "sections": {
-    "skills": "Habilidades",
+    "start": "Inicio",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "education": "Educación"
+    "education": "Educación",
+    "about": "Acerca de mí"
+  },
+  "about": {
+    "greeting": "Soy Santiago, soy un desarrollador full-stack con <bold>más de 4 años de experiencia.</bold>",
+    "frontend": "Front-end",
+    "styles": "Estilos",
+    "backend": "Back-end",
+    "others": "También",
+    "favoriteTech": "Algunas de mis tecnologías, temas o herramientas favoritas con las que trabajé"
   },
   "buttons": {
-    "readMore": "Leer más",
+    "projectCardBtnLabel": "Detalles del proyecto",
     "visitProject": "Visitar proyecto",
     "viewProject": "Ver Proyecto",
     "viewCode": "Ver Código"
@@ -35,22 +44,7 @@
   "education": {
     "achievements": "Logros"
   },
-  "footer": {
-    "contact": "Contacto",
-    "email": "Correo electrónico",
-    "mailtoSubject": "Consulta sobre tu portfolio de Full-stack",
-    "mailtoBody": "Buenos días, tengo una consulta sobre tu portfolio de Full-stack.",
-    "phone": "Teléfono",
-    "copyright": "© 2025 Santiago Pintus. Todos los derechos reservados.",
-    "developedBy": "Desarrollado por",
-    "openSource": "¿Te gusta este portfolio? Haz un fork y dale una estrella en",
-    "github": "GitHub",
-    "socialHeading": "Redes",
-    "aboutHeading": "Santiago Pintus",
-    "aboutDescription": "Desarrollador Full-stack especializado en React, Next.js y tecnologías web modernas."
-  },
   "header": {
-    "logo": "Santiago Pintus",
     "languageLabel": "Idioma",
     "toggleMenu": "Abrir menú"
   },
@@ -66,5 +60,16 @@
     "scrollLeft": "Desplazar izquierda",
     "scrollRight": "Desplazar derecha",
     "goToSlide": "Ir a diapositiva {slideNumber}"
+  },
+  "footer": {
+    "name": "Santiago Pintus",
+    "jobTitle": "Desarrollador Full-stack",
+    "contact": "Contacto",
+    "siteTitle": "Sitio",
+    "handcrafted": "Hecho a mano por mí",
+    "designedBy": "Inspirado en el diseño de Taisia Tsyganok",
+    "poweredBy": "Desarrollado con Next.js",
+    "openSource": "¿Te gusta este portfolio? Haz un fork y dale una estrella en",
+    "github": "GitHub"
   }
 }
