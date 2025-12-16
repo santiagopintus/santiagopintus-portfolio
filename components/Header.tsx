@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname, Link } from '@/i18n/routing';
 import { NavLink } from '@/types';
 import HamburgerIcon from './HamburgerIcon';
 import Container from './Container';
-import { useScrollSpy } from '@/hooks/useScrollSpy';
-import { useNavUnderline } from '@/hooks/useNavUnderline';
+import Navigation from './Navigation';
 import { NAV_SECTIONS } from '@/constants/navigation';
 
 export default function Header() {
@@ -24,36 +23,6 @@ export default function Header() {
     label: t(section),
     href: `/${locale}#${section}`,
   }));
-
-  // Check if we're on the home page
-  const isHomePage = pathname === '/';
-
-  // Scroll-spy navigation - only enabled on home page
-  const navRef = useRef<HTMLElement>(null);
-  const { activeSection, setActiveSection } = useScrollSpy(isHomePage ? NAV_SECTIONS : []);
-  const underlinePosition = useNavUnderline(isHomePage ? activeSection : null, navRef);
-
-  // Handle nav link click - immediate underline feedback and smooth scroll
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    setActiveSection(sectionId);
-
-    // If on home page, prevent navigation and scroll smoothly
-    if (isHomePage) {
-      e.preventDefault();
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const headerHeight = 80; // h-20 = 80px
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerHeight;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-      }
-    }
-    // Otherwise, let default navigation happen (goes to home page with hash)
-  };
 
   // Detect scroll to toggle header background
   useEffect(() => {
@@ -104,37 +73,14 @@ export default function Header() {
           <Link
             href="/"
             className="text-xl font-light md:font-bold font-mono md:font-sans hover:opacity-80 transition-opacity"
+            aria-label="Go to homepage - Santiago Pintus Portfolio"
+            title="Santiago Pintus - Full-stack Developer Portfolio"
           >
-            {tHeader('logo')}
+            Santiago Pintus
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav ref={navRef} className="hidden md:flex items-center relative">
-            {navLinks.map((link) => {
-              const sectionId = link.href.split('#')[1];
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  data-section={sectionId}
-                  onClick={(e) => handleNavClick(e, sectionId)}
-                  className="text-sm transition-opacity hover:opacity-80 p-4"
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-            {/* Animated underline - only on home page */}
-            {isHomePage && underlinePosition && (
-              <span
-                className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
-                style={{
-                  left: `${underlinePosition.left}px`,
-                  width: `${underlinePosition.width}px`,
-                }}
-              />
-            )}
-          </nav>
+          <Navigation className="hidden md:flex" />
 
           {/* Right Side: Language Selector (Desktop) + Hamburger (Mobile) */}
           <div className="flex items-center gap-4">
@@ -187,15 +133,8 @@ export default function Header() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => {
-                      handleNavClick(e, sectionId);
-                      handleMobileLinkClick();
-                    }}
-                    className={`py-4 text-lg transition-colors border-b border-white/10 ${
-                      activeSection === sectionId
-                        ? 'text-white font-medium'
-                        : 'text-white/60 hover:text-white/80'
-                    }`}
+                    onClick={() => handleMobileLinkClick()}
+                    className="py-4 text-lg transition-colors border-b border-white/10 text-white/60 hover:text-white/80"
                   >
                     {link.label}
                   </a>

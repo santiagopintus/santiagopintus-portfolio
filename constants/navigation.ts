@@ -5,6 +5,6 @@
 // 3. Translations (must also add to messages/*.json)
 
 //ORDER MATTERS - this array defines the order of sections in the nav
-export const NAV_SECTIONS = ['about', 'projects', 'experience', 'skills', 'contact'] as const;
+export const NAV_SECTIONS = ['start', 'projects', 'experience', 'about', 'contact'] as const;
 
 export type NavSection = (typeof NAV_SECTIONS)[number];

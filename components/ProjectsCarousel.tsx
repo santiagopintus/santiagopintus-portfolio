@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import ProjectCard from './ProjectCard';
-import Arrow from './Arrow';
+import Arrow from './ui/Arrow';
 import SectionTitle from './SectionTitle';
 import { Project } from '@/types';
 import Container from './Container';

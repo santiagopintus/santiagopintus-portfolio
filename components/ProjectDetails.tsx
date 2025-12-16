@@ -3,11 +3,11 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Project } from '@/types';
-import Arrow from './Arrow';
+import Arrow from './ui/Arrow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Container from './Container';
-import BackButton from './BackButton';
+import BackButton from './ui/BackButton';
 
 interface ProjectDetailsProps {
   project: Project;

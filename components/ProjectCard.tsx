@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import Arrow from './Arrow';
+import Arrow from './ui/Arrow';
 import { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -20,7 +20,11 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
   return (
     <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-[56px] md:rounded-4xl overflow-hidden shrink-0 snap-center relative border border-white/20">
       {/* Project Image */}
-      <Link href={`/projects/${project.id}`} aria-label={`${t('readMore')} about ${project.title}`}>
+      <Link
+        href={`/projects/${project.id}`}
+        aria-label={`View details about ${project.title} project`}
+        title={`${project.title} - ${project.description.substring(0, 100)}...`}
+      >
         <div className="aspect-7/8 md:aspect-2/1 relative bg-linear-to-br from-gray-800 to-gray-900">
           {screenshot ? (
             <Image
@@ -44,7 +48,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
       <div className="p-5 absolute right-0 bottom-0 md:bottom-auto md:top-0 w-full md:w-2/3 h-2/3 md:h-full bg-dark-bg/90 md:border-l border-white/20 flex flex-col justify-between">
         <div>
           <h3 className="text-2xl mb-2 font-mono line-clamp-1">{project.shortTitle}</h3>
-          <p className="text-white mb-4 line-clamp-3 lg:line-clamp-4 text-sm">
+          <p className="text-white mb-4 line-clamp-3 min-[1400px]:line-clamp-4 text-sm">
             {project.description}
           </p>
         </div>
@@ -52,7 +56,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
         {/* CONTENT FOOTER */}
         <div>
           {/* Technologies */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-nowrap gap-2 mb-4">
             {project.technologies.slice(0, 3).map((tech, index) => (
               <span key={index} className="text-xs px-3 py-1 bg-white/10 rounded-full">
                 {tech}
@@ -70,25 +74,13 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
             {/* Read More - Link to project details */}
             <Link
               href={`/projects/${project.id}`}
-              aria-label={`${t('readMore')} about ${project.title}`}
+              aria-label={`Read more about ${project.title} project - View full details and screenshots`}
+              title={`Explore ${project.title} project`}
               className="group flex items-center gap-2 px-6 py-2 bg-white text-black rounded-full hover:gap-4 transition-all"
             >
-              <span>{t('readMore')}</span>
+              <span>{t('projectCardBtnLabel')}</span>
               <Arrow className="w-4 h-4" />
             </Link>
-
-            {/* Visit Project - External link */}
-            {/* {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${t('visitProject')} - ${project.title}`}
-                className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all border border-white/20 hover:border-white/30"
-              >
-                <Arrow className="w-4 h-4 -rotate-45" />
-              </a>
-            )} */}
           </div>
         </div>
       </div>
