@@ -127,19 +127,16 @@ export default function Header() {
           <div className="md:hidden fixed top-20 left-0 right-0 z-40 backdrop-blur-lg bg-black/50 border-b-2 border-white/30 shadow-2xl animate-slideDown">
             <Container as="nav" className="flex flex-col py-6">
               {/* Navigation Links */}
-              {navLinks.map((link) => {
-                const sectionId = link.href.split('#')[1];
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => handleMobileLinkClick()}
-                    className="py-4 text-lg transition-colors border-b border-white/10 text-white/60 hover:text-white/80"
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => handleMobileLinkClick()}
+                  className="py-4 text-lg transition-colors border-b border-white/10 text-white/60 hover:text-white/80"
+                >
+                  {link.label}
+                </a>
+              ))}
 
               {/* Language Selector - Mobile Only */}
               <div className="py-6 border-t border-white/10 mt-4">

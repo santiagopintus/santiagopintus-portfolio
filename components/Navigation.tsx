@@ -19,7 +19,6 @@ export default function Navigation({
   onLinkClick,
   className = '',
   showUnderline = true,
-  isFooterNav = false,
 }: NavigationProps) {
   const t = useTranslations('navigation');
   const locale = useLocale();
