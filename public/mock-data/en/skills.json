@@ -14,7 +14,7 @@
   {
     "id": "3",
     "name": "TypeScript",
-    "category": "Language",
+    "category": "Frontend",
     "order": 3
   },
   {
@@ -31,62 +31,86 @@
   },
   {
     "id": "6",
-    "name": "MongoDB, Express, and NodeJS",
+    "name": "MongoDB",
     "category": "Backend",
     "order": 6
   },
   {
     "id": "7",
-    "name": "Problem detection and troubleshooting",
-    "category": "Soft Skills",
+    "name": "Express",
+    "category": "Backend",
     "order": 7
   },
   {
     "id": "8",
-    "name": "Best SEO Principles",
-    "category": "Frontend",
+    "name": "NodeJS",
+    "category": "Backend",
     "order": 8
   },
   {
     "id": "9",
-    "name": "Fluent in English, Spanish, and Portuguese",
-    "category": "Languages",
+    "name": "Best SEO Principles",
+    "category": "Frontend",
     "order": 9
   },
   {
     "id": "10",
-    "name": "GitHub, GitLab, and version control with GIT",
-    "category": "Tools",
+    "name": "Problem detection and troubleshooting",
+    "category": "Other",
     "order": 10
   },
   {
     "id": "11",
-    "name": "Code documentation to promote maintainability",
-    "category": "Best Practices",
+    "name": "Fluent in English, Spanish, and Portuguese",
+    "category": "Other",
     "order": 11
   },
   {
     "id": "12",
-    "name": "End-to-end testing",
-    "category": "Testing",
+    "name": "GitHub, GitLab, and version control with GIT",
+    "category": "Other",
     "order": 12
   },
   {
     "id": "13",
-    "name": "Attention to detail",
-    "category": "Soft Skills",
+    "name": "Code documentation to promote maintainability",
+    "category": "Other",
     "order": 13
   },
   {
     "id": "14",
-    "name": "Frontend internationalization (I18N)",
-    "category": "Frontend",
+    "name": "End-to-end testing",
+    "category": "Other",
     "order": 14
   },
   {
     "id": "15",
-    "name": "Web Content Accessibility Guidelines (WCAG)",
-    "category": "Accessibility",
+    "name": "Attention to detail",
+    "category": "Other",
     "order": 15
+  },
+  {
+    "id": "16",
+    "name": "Frontend internationalization (I18N)",
+    "category": "Frontend",
+    "order": 16
+  },
+  {
+    "id": "17",
+    "name": "Web Content Accessibility Guidelines (WCAG)",
+    "category": "Other",
+    "order": 17
+  },
+  {
+    "id": "18",
+    "name": "GraphQL: Apollo Client",
+    "category": "Frontend",
+    "order": 18
+  },
+  {
+    "id": "19",
+    "name": "GraphQL: Apollo Server",
+    "category": "Backend",
+    "order": 19
   }
 ]

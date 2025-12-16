@@ -14,7 +14,7 @@
   {
     "id": "3",
     "name": "TypeScript",
-    "category": "Lenguaje",
+    "category": "Frontend",
     "order": 3
   },
   {
@@ -31,62 +31,74 @@
   },
   {
     "id": "6",
-    "name": "MongoDB, Express, y NodeJS",
+    "name": "MongoDB",
     "category": "Backend",
     "order": 6
   },
   {
     "id": "7",
-    "name": "Detección de problemas y resolución",
-    "category": "Habilidades Blandas",
+    "name": "Express",
+    "category": "Backend",
     "order": 7
   },
   {
     "id": "8",
-    "name": "Mejores prácticas de SEO",
-    "category": "Frontend",
+    "name": "NodeJS",
+    "category": "Backend",
     "order": 8
   },
   {
     "id": "9",
-    "name": "Fluido en inglés, español y portugués",
-    "category": "Idiomas",
+    "name": "Mejores prácticas de SEO",
+    "category": "Frontend",
     "order": 9
   },
   {
     "id": "10",
-    "name": "GitHub, GitLab, y control de versiones con GIT",
-    "category": "Herramientas",
+    "name": "Detección de problemas y resolución",
+    "category": "Other",
     "order": 10
   },
   {
     "id": "11",
-    "name": "Documentación de código para promover mantenibilidad",
-    "category": "Mejores Prácticas",
+    "name": "Fluido en inglés, español y portugués",
+    "category": "Other",
     "order": 11
   },
   {
     "id": "12",
-    "name": "Pruebas de extremo a extremo",
-    "category": "Testing",
+    "name": "GitHub, GitLab, y control de versiones con GIT",
+    "category": "Other",
     "order": 12
   },
   {
     "id": "13",
-    "name": "Atención al detalle",
-    "category": "Habilidades Blandas",
+    "name": "Documentación de código para promover mantenibilidad",
+    "category": "Other",
     "order": 13
   },
   {
     "id": "14",
-    "name": "Internacionalización Frontend (I18N)",
-    "category": "Frontend",
+    "name": "Pruebas de extremo a extremo",
+    "category": "Other",
     "order": 14
   },
   {
     "id": "15",
-    "name": "Pautas de Accesibilidad para el Contenido Web (WCAG)",
-    "category": "Accesibilidad",
+    "name": "Atención al detalle",
+    "category": "Other",
     "order": 15
+  },
+  {
+    "id": "16",
+    "name": "Internacionalización Frontend (I18N)",
+    "category": "Frontend",
+    "order": 16
+  },
+  {
+    "id": "17",
+    "name": "Pautas de Accesibilidad para el Contenido Web (WCAG)",
+    "category": "Other",
+    "order": 17
   }
 ]
