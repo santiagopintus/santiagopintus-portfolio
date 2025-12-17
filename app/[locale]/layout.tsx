@@ -56,11 +56,16 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Font preconnect hints for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Favicon */}
         <link rel="icon" href="./icon.png" />
       </head>
-      <body className={`${openSans.variable} ${firaCode.variable} antialiased`}>
+      <body className={`${openSans.variable} ${firaCode.variable} antialiased`} suppressHydrationWarning>
         <CursorGradient />
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>

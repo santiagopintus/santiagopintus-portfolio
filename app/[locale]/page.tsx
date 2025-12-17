@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+import Header from '@/components/header';
 import HeroGrid from '@/components/HeroGrid';
 import SocialLinks from '@/components/SocialLinks';
 import SkillsSection from '@/components/SkillsSection';

@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { useRouter, usePathname, Link } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import { NavLink } from '@/types';
-import HamburgerIcon from './HamburgerIcon';
-import Container from './Container';
-import Navigation from './Navigation';
-import { NAV_SECTIONS } from '@/constants/navigation';
+import HamburgerIcon from '../HamburgerIcon';
+import Container from '../Container';
+import Navigation from '../Navigation';
+import LanguageSwitcher from './LanguageSwitcher';
+import { NAV_SECTIONS } from './navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,8 +16,6 @@ export default function Header() {
   const t = useTranslations('navigation');
   const tHeader = useTranslations('header');
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
 
   // Navigation links configuration - generated from NAV_SECTIONS constant
   const navLinks: NavLink[] = NAV_SECTIONS.map((section) => ({
@@ -48,15 +47,6 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const languages = [
-    { code: 'en', label: 'En' },
-    { code: 'es', label: 'Es' },
-  ];
-
-  const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
-  };
-
   const handleMobileLinkClick = () => {
     setMobileMenuOpen(false);
   };
@@ -85,21 +75,7 @@ export default function Header() {
           {/* Right Side: Language Selector (Desktop) + Hamburger (Mobile) */}
           <div className="flex items-center gap-4">
             {/* Language Selector - Desktop Only */}
-            <div className="hidden md:flex items-center gap-2">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className={`cursor-pointer px-3 py-1 text-sm rounded-md transition-all ${
-                    locale === lang.code
-                      ? 'bg-white text-black font-medium'
-                      : 'text-white/60 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
+            <LanguageSwitcher className="hidden md:flex" />
 
             {/* Hamburger Menu Button (Mobile Only) */}
             <button
@@ -141,24 +117,7 @@ export default function Header() {
               {/* Language Selector - Mobile Only */}
               <div className="py-6 border-t border-white/10 mt-4">
                 <p className="text-sm text-white/60 mb-3">{tHeader('languageLabel')}</p>
-                <div className="flex items-center gap-2">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        handleLanguageChange(lang.code);
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`cursor-pointer px-4 py-2 text-sm rounded-md transition-all ${
-                        locale === lang.code
-                          ? 'bg-white text-black font-medium'
-                          : 'text-white/60 hover:text-white hover:bg-white/10'
-                      }`}
-                    >
-                      {lang.label}
-                    </button>
-                  ))}
-                </div>
+                <LanguageSwitcher onLanguageChange={() => setMobileMenuOpen(false)} />
               </div>
             </Container>
           </div>
