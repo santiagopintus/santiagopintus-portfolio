@@ -116,16 +116,15 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             <Arrow direction="left" />
           </button>
 
-          {/* Dots */}
+          {/* Dots - Visual indicators only (non-interactive) */}
           <div className="flex items-center gap-3">
             {projects.map((_, index) => (
-              <button
+              <div
                 key={index}
-                onClick={() => scrollToIndex(index)}
                 className={`rounded-full transition-all ${
-                  index === currentIndex ? 'w-2 h-2 bg-white' : 'w-2 h-2 bg-white/30'
+                  index === currentIndex ? 'w-2 h-2 bg-white' : 'w-2 h-2 bg-white/60'
                 }`}
-                aria-label={tCarousel('goToSlide', { slideNumber: index + 1 })}
+                aria-hidden="true"
               />
             ))}
           </div>

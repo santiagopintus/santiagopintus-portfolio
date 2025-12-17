@@ -18,7 +18,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
   const screenshot = project.screenshots?.[0];
 
   return (
-    <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-[56px] md:rounded-4xl overflow-hidden shrink-0 snap-center relative border border-white/20">
+    <div className="min-w-[280px] w-[calc(100vw-4rem)] md:w-full bg-linear-to-br rounded-4xl overflow-hidden shrink-0 snap-center relative border border-white/20">
       {/* Project Image */}
       <Link
         href={`/projects/${project.id}`}
