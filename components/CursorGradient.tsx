@@ -4,8 +4,12 @@ import { useEffect, useState } from 'react';
 
 export default function CursorGradient() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Set mounted to true on client-side only
+    setMounted(true);
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -16,6 +20,9 @@ export default function CursorGradient() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  // Don't render during SSR to avoid hydration mismatch
+  if (!mounted) return null;
 
   return (
     <div

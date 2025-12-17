@@ -100,5 +100,41 @@
     "name": "Pautas de Accesibilidad para el Contenido Web (WCAG)",
     "category": "Other",
     "order": 17
+  },
+  {
+    "id": "18",
+    "name": "GraphQL: Apollo Client",
+    "category": "Frontend",
+    "order": 18
+  },
+  {
+    "id": "19",
+    "name": "GraphQL: Apollo Server",
+    "category": "Backend",
+    "order": 19
+  },
+  {
+    "id": "20",
+    "name": "MySQL",
+    "category": "Backend",
+    "order": 20
+  },
+  {
+    "id": "21",
+    "name": "REST APIs",
+    "category": "Backend",
+    "order": 21
+  },
+  {
+    "id": "22",
+    "name": "Jest & Vitest",
+    "category": "Frontend",
+    "order": 22
+  },
+  {
+    "id": "23",
+    "name": "Playwright",
+    "category": "Frontend",
+    "order": 23
   }
 ]

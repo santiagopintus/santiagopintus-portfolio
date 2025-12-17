@@ -6,7 +6,7 @@ import { usePathname } from '@/i18n/routing';
 import { NavLink } from '@/types';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
 import { useNavUnderline } from '@/hooks/useNavUnderline';
-import { NAV_SECTIONS } from '@/constants/navigation';
+import { NAV_SECTIONS } from '@/components/header/navigation';
 
 interface NavigationProps {
   onLinkClick?: (sectionId: string) => void;

@@ -143,7 +143,7 @@ export default function ExperienceTimeline({ experiences, education }: Experienc
                   <div
                     className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'} pl-12 md:pl-0`}
                   >
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-4xl p-6 hover:bg-white/10 transition-all">
                       {/* Header */}
                       <div className="mb-4">
                         <div className="flex items-start justify-between flex-col md:flex-row gap-2">
