@@ -63,9 +63,13 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Favicon */}
-        <link rel="icon" href="./icon.png" />
+        <link rel="icon" href="./favicon.ico" />
+        <link rel="apple-touch-icon" href="./favicon.png" />
       </head>
-      <body className={`${openSans.variable} ${firaCode.variable} antialiased`} suppressHydrationWarning>
+      <body
+        className={`${openSans.variable} ${firaCode.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <CursorGradient />
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
