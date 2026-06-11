@@ -1,5 +1,26 @@
 [
   {
+    "id": "la-montre",
+    "shortTitle": "La Montre",
+    "title": "La Montre - E-commerce Site",
+    "description": "Full-stack e-commerce platform built with Next.js and Tailwind CSS, featuring product catalog, shopping cart, and Formspree-powered customer feedback",
+    "longDescription": "A modern e-commerce website for a watch brand built with Next.js and Tailwind CSS. Features a clean product catalog with filtering, a fully functional shopping cart, and a customer feedback form powered by Formspree for seamless email delivery without a custom backend. Responsive design ensures a polished experience across all devices. Demonstrates proficiency in Next.js App Router, utility-first styling with Tailwind CSS, third-party form/email integration, and building production-ready storefronts.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Formspree"],
+    "githubUrl": "https://github.com/santiagopintus/laMontre",
+    "liveUrl": "https://santiagopintus.github.io/laMontre/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/la-montre.png",
+        "altText": "La Montre e-commerce product catalog",
+        "order": 1
+      }
+    ],
+    "order": 1,
+    "createdAt": "2021",
+    "updatedAt": "2021"
+  },
+  {
     "id": "ethrewards-redux-cra",
     "shortTitle": "EthRewards Dashboard",
     "title": "EthRewards Dashboard ",
@@ -68,27 +89,6 @@
       }
     ],
     "order": 4,
-    "createdAt": "2021",
-    "updatedAt": "2021"
-  },
-  {
-    "id": "la-montre",
-    "shortTitle": "La Montre",
-    "title": "La Montre - E-commerce Site",
-    "description": "Vanilla JavaScript e-commerce platform featuring dynamic product filtering, shopping cart management, and responsive design without frameworks",
-    "longDescription": "A pure vanilla JavaScript e-commerce platform demonstrating fundamental web development skills without framework dependencies. Features include dynamic product filtering with real-time updates, shopping cart management with add/remove functionality, and fully responsive design using CSS Grid and Flexbox. Built with a focus on core JavaScript concepts including DOM manipulation, event handling, local storage for cart persistence, and object-oriented programming patterns. Showcases strong foundation in web fundamentals before adopting modern frameworks.",
-    "technologies": ["JavaScript", "HTML", "CSS"],
-    "githubUrl": "https://github.com/santiagopintus/laMontre",
-    "liveUrl": "https://santiagopintus.github.io/laMontre/",
-    "featured": false,
-    "screenshots": [
-      {
-        "url": "/images/projects/la-montre.png",
-        "altText": "La Montre e-commerce product catalog",
-        "order": 1
-      }
-    ],
-    "order": 5,
     "createdAt": "2021",
     "updatedAt": "2021"
   }

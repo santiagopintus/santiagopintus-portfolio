@@ -6,7 +6,7 @@ import Container from './Container';
 
 const HeroStyledH1 = ({ children }: { children: React.ReactNode }) => (
   <h1
-    className="text-[10vw] md:text-[7vw]  font-bold font-mono leading-tight"
+    className="text-[10vw] md:text-[7vw] [min-width:2000px]:text-[140px] font-bold font-mono leading-tight"
     style={{
       textShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
     }}
