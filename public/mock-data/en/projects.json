@@ -21,6 +21,27 @@
     "updatedAt": "2021"
   },
   {
+    "id": "mologrind-studios",
+    "shortTitle": "Mologrind Studios",
+    "title": "Mologrind Studios - Indie Game Studio Landing Page",
+    "description": "Indie game studio landing page built with Next.js and Tailwind CSS, featuring a dark atmospheric design, multi-section storytelling layout, and full English/Spanish internationalization with a live language switcher.",
+    "longDescription": "A moody, brand-forward landing page for Mologrind Studios — an indie game development studio — built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4. The site presents the studio's identity across seven sections: hero, about, projects showcase, vision, and contact, all tied together with a cohesive dark theme using an OKLCH color palette and Cormorant Garamond serif typography. Internationalization is handled via next-intl, delivering full English and Spanish versions with a one-click language switcher baked into the header — no page reload required. Sections animate into view on scroll using an IntersectionObserver-powered Reveal system, and the entire site is statically generated at build time for instant load performance. Demonstrates proficiency in Next.js App Router with SSG, Tailwind CSS v4 utility-first design, next-intl i18n routing, server and client component architecture, and building polished, brand-driven marketing sites.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "next-intl"],
+    "githubUrl": "https://github.com/santiagopintus/mologrind-studios",
+    "liveUrl": "https://santiagopintus.github.io/mologrind-studios/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/mologrind-studios.png",
+        "altText": "Mologrind Studios landing page hero section",
+        "order": 1
+      }
+    ],
+    "order": 2,
+    "createdAt": "2025",
+    "updatedAt": "2025"
+  },
+  {
     "id": "ethrewards-redux-cra",
     "shortTitle": "EthRewards Dashboard",
     "title": "EthRewards Dashboard ",
@@ -46,7 +67,7 @@
         "order": 1
       }
     ],
-    "order": 2,
+    "order": 3,
     "createdAt": "2024-11-06",
     "updatedAt": "2024-11-06"
   },
@@ -67,7 +88,7 @@
         "order": 1
       }
     ],
-    "order": 3,
+    "order": 4,
     "createdAt": "2023-03-06",
     "updatedAt": "2023-03-06"
   },
@@ -88,7 +109,7 @@
         "order": 1
       }
     ],
-    "order": 4,
+    "order": 5,
     "createdAt": "2021",
     "updatedAt": "2021"
   }

@@ -2,6 +2,9 @@
   "name": "santiagopintus-portfolio",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Santiago Pintus"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

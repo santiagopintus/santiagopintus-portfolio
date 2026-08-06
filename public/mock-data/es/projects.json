@@ -21,6 +21,27 @@
     "updatedAt": "2021"
   },
   {
+    "id": "mologrind-studios",
+    "shortTitle": "Mologrind Studios",
+    "title": "Mologrind Studios - Landing Page de Estudio Indie",
+    "description": "Landing page de estudio indie de videojuegos construida con Next.js y Tailwind CSS, con diseño oscuro y atmosférico, estructura narrativa de múltiples secciones e internacionalización completa en inglés/español con selector de idioma en tiempo real.",
+    "longDescription": "Una landing page con fuerte identidad de marca para Mologrind Studios — un estudio indie de desarrollo de videojuegos — construida con Next.js 16 (App Router), TypeScript y Tailwind CSS v4. El sitio presenta la identidad del estudio en siete secciones: hero, about, showcase de proyectos, visión y contacto, unidas por un tema oscuro cohesivo con paleta de colores OKLCH y tipografía serif Cormorant Garamond. La internacionalización se gestiona con next-intl, ofreciendo versiones completas en inglés y español con un selector de idioma integrado en el header con un solo clic — sin recargar la página. Las secciones se animan al entrar en pantalla mediante un sistema Reveal basado en IntersectionObserver, y el sitio completo se genera estáticamente en tiempo de compilación para un rendimiento de carga instantáneo. Demuestra competencia en Next.js App Router con SSG, diseño utility-first con Tailwind CSS v4, enrutamiento i18n con next-intl, arquitectura de componentes de servidor y cliente, y construcción de sitios de marketing pulidos y orientados a la marca.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "next-intl"],
+    "githubUrl": "https://github.com/santiagopintus/mologrind-studios",
+    "liveUrl": "https://santiagopintus.github.io/mologrind-studios/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/mologrind-studios.png",
+        "altText": "Sección hero de la landing page de Mologrind Studios",
+        "order": 1
+      }
+    ],
+    "order": 2,
+    "createdAt": "2025",
+    "updatedAt": "2025"
+  },
+  {
     "id": "ethrewards-redux-cra",
     "shortTitle": "Panel EthRewards",
     "title": "Panel EthRewards",
@@ -46,7 +67,7 @@
         "order": 1
       }
     ],
-    "order": 2,
+    "order": 3,
     "createdAt": "2024-11-06",
     "updatedAt": "2024-11-06"
   },
@@ -67,7 +88,7 @@
         "order": 1
       }
     ],
-    "order": 3,
+    "order": 4,
     "createdAt": "2023-03-06",
     "updatedAt": "2023-03-06"
   },
@@ -88,7 +109,7 @@
         "order": 1
       }
     ],
-    "order": 4,
+    "order": 5,
     "createdAt": "2021",
     "updatedAt": "2021"
   }
