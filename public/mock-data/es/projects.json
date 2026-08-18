@@ -109,6 +109,34 @@
     "updatedAt": "2023-03-06"
   },
   {
+    "id": "questlog",
+    "shortTitle": "QuestLog",
+    "title": "QuestLog - Rastreador de Backlog de Videojuegos",
+    "description": "Rastreador de backlog de videojuegos construido con .NET Blazor y PostgreSQL, con autenticación de usuarios, bibliotecas por usuario y funcionalidad CRUD completa para estado y calificación.",
+    "longDescription": "QuestLog es un rastreador full-stack de backlog de videojuegos construido con .NET Blazor y una base de datos PostgreSQL. Los usuarios crean cuentas seguras para buscar en un catálogo global de juegos mediante la API de RAWG y agregar títulos a su estantería privada por usuario, donde pueden rastrear el estado (Wishlist, Backlog, Jugando, Completado, Archivado), calificar juegos y agregar notas personales. La funcionalidad CRUD completa permite agregar, actualizar y eliminar juegos, con autenticación y autorización que aseguran que cada usuario solo acceda a sus propios datos. Demuestra competencia en .NET Blazor, diseño de bases de datos relacionales con PostgreSQL, autenticación de usuarios, e integración de APIs de terceros.",
+    "technologies": [".NET", "Blazor", "C#", "PostgreSQL", "RAWG API"],
+    "githubUrl": "https://github.com/santiagopintus/questlog-app",
+    "liveUrl": "https://questlog-hne9eycphcdzfxce.northcentralus-01.azurewebsites.net/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/questlog/questlog.png",
+        "altText": "Panel de control del backlog de QuestLog",
+        "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "CRUD Completo en la Estantería",
+        "img": "/images/projects/questlog/questlog-crud.png",
+        "description": "Cada juego en la estantería del usuario es totalmente personalizable — los usuarios pueden agregar juegos, actualizar su estado, calificación y notas, y eliminar entradas por completo, todo limitado a su propia cuenta."
+      }
+    ],
+    "order": 5,
+    "createdAt": "2025",
+    "updatedAt": "2025"
+  },
+  {
     "id": "ingles-con-ailu",
     "shortTitle": "Inglés con Ailu",
     "title": "Inglés con Ailu - Sitio Web de Coaching de Idiomas",
@@ -132,7 +160,7 @@
         "description": "El sitio completo fue diseñado desde cero en Figma, utilizando componentes reutilizables de Figma para construir los layouts de escritorio y móvil antes de la implementación."
       }
     ],
-    "order": 5,
+    "order": 6,
     "createdAt": "2021",
     "updatedAt": "2021"
   }

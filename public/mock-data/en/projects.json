@@ -109,6 +109,34 @@
     "updatedAt": "2023-03-06"
   },
   {
+    "id": "questlog",
+    "shortTitle": "QuestLog",
+    "title": "QuestLog - Game Backlog Tracker",
+    "description": "Game backlog tracker built with .NET Blazor and PostgreSQL, featuring user authentication, per-user libraries, and full CRUD status and rating tracking.",
+    "longDescription": "QuestLog is a full-stack game backlog tracker built with .NET Blazor and a PostgreSQL database. Users create secure accounts to search a global game catalog via the RAWG API and add titles to a private, per-user shelf, where they can track status (Wishlist, Backlog, Playing, Completed, Shelved), rate games, and add personal notes. Full CRUD functionality lets users add, update, and remove games, with authentication and authorization ensuring each user only accesses their own data. Demonstrates proficiency in .NET Blazor, relational database design with PostgreSQL, user authentication, and third-party API integration.",
+    "technologies": [".NET", "Blazor", "C#", "PostgreSQL", "RAWG API"],
+    "githubUrl": "https://github.com/santiagopintus/questlog-app",
+    "liveUrl": "https://questlog-hne9eycphcdzfxce.northcentralus-01.azurewebsites.net/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/questlog/questlog.png",
+        "altText": "QuestLog game backlog dashboard",
+        "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "Full CRUD on Shelf Entries",
+        "img": "/images/projects/questlog/questlog-crud.png",
+        "description": "Every game on a user's shelf is fully customizable — users can add games, update their status, rating, and notes, and remove entries entirely, all scoped to their own account."
+      }
+    ],
+    "order": 5,
+    "createdAt": "2025",
+    "updatedAt": "2025"
+  },
+  {
     "id": "ingles-con-ailu",
     "shortTitle": "Inglés con Ailu",
     "title": "Inglés con Ailu - Language Coaching Website",
@@ -132,7 +160,7 @@
         "description": "The full site was designed from scratch in Figma, using reusable Figma components to build out both desktop and mobile layouts before implementation."
       }
     ],
-    "order": 5,
+    "order": 6,
     "createdAt": "2021",
     "updatedAt": "2021"
   }
