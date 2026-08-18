@@ -53,7 +53,8 @@
     "viewOnGithub": "View on GitHub",
     "visitLiveProject": "Visit live project",
     "viewSourceCode": "View source code for {projectTitle} on GitHub",
-    "visitLiveVersion": "Visit live version of {projectTitle}"
+    "visitLiveVersion": "Visit live version of {projectTitle}",
+    "features": "Features"
   },
   "projectsCarousel": {
     "scrollLeft": "Scroll left",

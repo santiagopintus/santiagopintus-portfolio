@@ -47,13 +47,13 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
       isWhite: true,
     },
     {
-      title: tAbout('styles'),
-      skills: ['Tailwind CSS', 'CSS3', 'SASS', 'PostCSS', 'Material UI', 'Styled Components'],
+      title: tAbout('backend'),
+      skills: skillsByCategory['Backend'] || [],
       className: 'p-6 bg-transparent border border-white/20 rounded-4xl',
     },
     {
-      title: tAbout('backend'),
-      skills: skillsByCategory['Backend'] || [],
+      title: tAbout('styles'),
+      skills: ['Tailwind CSS', 'CSS3', 'SASS', 'PostCSS', 'Material UI', 'Styled Components'],
       className: 'p-6 bg-transparent border border-white/20 rounded-4xl',
     },
     {

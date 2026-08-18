@@ -54,7 +54,8 @@
     "viewOnGithub": "Ver en GitHub",
     "visitLiveProject": "Visitar proyecto en vivo",
     "viewSourceCode": "Ver código fuente de {projectTitle} en GitHub",
-    "visitLiveVersion": "Visitar versión en vivo de {projectTitle}"
+    "visitLiveVersion": "Visitar versión en vivo de {projectTitle}",
+    "features": "Características"
   },
   "projectsCarousel": {
     "scrollLeft": "Desplazar izquierda",

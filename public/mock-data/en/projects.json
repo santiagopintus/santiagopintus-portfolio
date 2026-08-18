@@ -3,9 +3,9 @@
     "id": "la-montre",
     "shortTitle": "La Montre",
     "title": "La Montre - E-commerce Site",
-    "description": "Full-stack e-commerce platform built with Next.js and Tailwind CSS, featuring product catalog, shopping cart, and Formspree-powered customer feedback",
-    "longDescription": "A modern e-commerce website for a watch brand built with Next.js and Tailwind CSS. Features a clean product catalog with filtering, a fully functional shopping cart, and a customer feedback form powered by Formspree for seamless email delivery without a custom backend. Responsive design ensures a polished experience across all devices. Demonstrates proficiency in Next.js App Router, utility-first styling with Tailwind CSS, third-party form/email integration, and building production-ready storefronts.",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Formspree"],
+    "description": "Full-stack e-commerce platform built with Next.js, a NestJS (Node.js) API, and PostgreSQL, featuring a product catalog and shopping cart",
+    "longDescription": "A full-stack e-commerce website for a watch brand, pairing a Next.js front-end with a NestJS (Node.js) REST API and a PostgreSQL database for product catalog and order data. Features a clean product catalog with filtering and a fully functional shopping cart, styled with Tailwind CSS. Responsive design ensures a polished experience across all devices. Demonstrates proficiency in Next.js App Router, building and consuming a NestJS API, relational data modeling with PostgreSQL, and utility-first styling with Tailwind CSS.",
+    "technologies": ["Next.js", "Node.js", "NestJS", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     "githubUrl": "https://github.com/santiagopintus/laMontre",
     "liveUrl": "https://santiagopintus.github.io/laMontre/",
     "featured": true,
@@ -14,6 +14,13 @@
         "url": "/images/projects/la-montre.png",
         "altText": "La Montre e-commerce product catalog",
         "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "Supabase PostgreSQL Database",
+        "img": "/images/projects/laMontre/db-supabase.png",
+        "description": "A relational schema hosted on Supabase PostgreSQL: the Watch table stores each product's model, price, and digital/smart flags, and links to the Brand table through a brandId foreign key. Prisma manages schema migrations against the database."
       }
     ],
     "order": 1,
@@ -32,11 +39,12 @@
     "featured": true,
     "screenshots": [
       {
-        "url": "/images/projects/mologrind-studios.png",
+        "url": "/images/projects/mologrind.png",
         "altText": "Mologrind Studios landing page hero section",
         "order": 1
       }
     ],
+    "features": [],
     "order": 2,
     "createdAt": "2025",
     "updatedAt": "2025"
@@ -67,6 +75,7 @@
         "order": 1
       }
     ],
+    "features": [],
     "order": 3,
     "createdAt": "2024-11-06",
     "updatedAt": "2024-11-06"
@@ -79,13 +88,20 @@
     "longDescription": "A robust Node.js API implementing GraphQL for efficient recipe and cookbook data management. Features Express.js web framework integration and comprehensive TypeScript support for type-safe, maintainable code. Designed with modern API architecture patterns including proper error handling, validation, and scalable data structures. Demonstrates backend development expertise, GraphQL schema design, and API best practices for building production-ready services.",
     "technologies": ["Node.js", "Express.js", "GraphQL", "TypeScript"],
     "githubUrl": "https://github.com/santiagopintus/cookbook-api",
-    "liveUrl": null,
+    "liveUrl": "https://cookbook-api-7nld.onrender.com/graphql",
     "featured": false,
     "screenshots": [
       {
         "url": "/images/projects/cookbook-api.jpg",
         "altText": "Cookbook API GraphQL schema",
         "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "GraphQL Playground",
+        "img": "/images/projects/cookbook-api/graphql-playground.png",
+        "description": "An interactive GraphQL Playground for querying the API, shown here running an ingredients query that returns the full list of ingredient names stored in the database."
       }
     ],
     "order": 4,
@@ -104,9 +120,16 @@
     "featured": false,
     "screenshots": [
       {
-        "url": "/images/projects/ingles-con-ailu.png",
+        "url": "/images/projects/ingles-con-ailu/ingles-con-ailu.png",
         "altText": "Inglés con Ailu homepage",
         "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "Figma Design System",
+        "img": "/images/projects/ingles-con-ailu/ingles-con-ailu-figma.png",
+        "description": "The full site was designed from scratch in Figma, using reusable Figma components to build out both desktop and mobile layouts before implementation."
       }
     ],
     "order": 5,

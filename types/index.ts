@@ -23,9 +23,16 @@ export interface Project {
   liveUrl?: string;
   featured: boolean;
   screenshots: ProjectScreenshot[];
+  features: ProjectFeature[];
   order: number;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface ProjectFeature {
+  title: string;
+  img: string;
+  description: string;
 }
 
 export interface ProjectScreenshot {

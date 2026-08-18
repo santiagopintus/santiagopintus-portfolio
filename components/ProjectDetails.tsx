@@ -106,6 +106,35 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             </div>
           </div>
         </div>
+
+        {/* Features */}
+        {project.features && project.features.length > 0 && (
+          <div className="mt-20 space-y-12">
+            <h2 className="text-3xl font-bold">{tProject('features')}</h2>
+            <div className="space-y-16">
+              {project.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                >
+                  <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-8 aspect-16/9 w-full">
+                    <Image
+                      src={feature.img}
+                      alt={feature.title}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-semibold">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </Container>
     </section>
   );
