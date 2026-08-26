@@ -1,5 +1,51 @@
 [
   {
+    "id": "wms-ai-assistant",
+    "shortTitle": "WMS AI Copilot",
+    "title": "WMS AI Copilot - Asistente de IA para Gestión de Almacenes",
+    "description": "Copiloto de IA en tiempo real full-stack para gestión de almacenes construido con Next.js, Express, Supabase, y el Vercel AI SDK, con consultas en lenguaje natural por streaming y un dashboard adaptativo.",
+    "longDescription": "Arquitecturé y construí un monorepo full-stack, con forma de producción, para un copiloto de IA en tiempo real diseñado para la gestión moderna de almacenes. Construido para mi portfolio en lugar de para un puesto formal, la plataforma permite a los administradores de almacén realizar consultas en lenguaje natural sobre niveles de stock, productos más vendidos, y alertas de reposición, devolviendo respuestas en streaming token por token o grillas de datos ordenables. Integré el Vercel AI SDK y Groq Cloud (Llama 3.x) para respuestas de baja latencia con selección determinística de herramientas de base de datos, restringiendo a la IA a herramientas de acceso a base de datos curadas y estrictamente tipadas en lugar de ejecución de queries en crudo, manteniendo al LLM dentro de límites estrictos de seguridad y confianza. Construí un dashboard operativo completo con vista dividida en Next.js App Router para el seguimiento en tiempo real de inventario, productos, e historial de pedidos, y arquitecturé la aplicación desde cero con next-intl para flujos conversacionales y de UI completamente bilingües (inglés/español). Estructurado como un monorepo con npm workspaces, con tipado estricto de TypeScript en la API, el frontend, y las definiciones de herramientas de IA, respaldado por cobertura de pruebas con Jest.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Express",
+      "Groq Cloud (Llama 3.x)",
+      "Vercel AI SDK",
+      "Supabase (PostgreSQL)",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query & Table",
+      "next-intl",
+      "Jest",
+      "npm Workspaces"
+    ],
+    "githubUrl": "https://github.com/santiagopintus/wms-ai-assistant",
+    "liveUrl": "https://wms-ai-assistant-web.vercel.app/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/wms-ai-assistant/wms-ai-assistant.png",
+        "altText": "Dashboard y chat del WMS AI Copilot",
+        "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "Pipeline de Visualización Adaptativa",
+        "img": "/images/projects/wms-ai-assistant/it-renders-charts.png",
+        "description": "Un motor de frontend inteligente renderiza dinámicamente texto plano, gráficos, o tablas ordenables de TanStack según el esquema del resultado de la consulta de la IA — mostrado aquí respondiendo una consulta en lenguaje natural con un gráfico de torta en vivo y su desglose por categoría."
+      },
+      {
+        "title": "Grillas de Datos Ordenables",
+        "img": "/images/projects/wms-ai-assistant/it-renders-tables.png",
+        "description": "Para resultados tabulares, el copiloto transmite datos estructurados directamente a una TanStack Table ordenable, permitiendo a los administradores reordenar y explorar resultados de inventario sin salir de la conversación."
+      }
+    ],
+    "order": 1,
+    "createdAt": "2026",
+    "updatedAt": "2026"
+  },
+  {
     "id": "la-montre",
     "shortTitle": "La Montre",
     "title": "La Montre - Sitio E-commerce",
@@ -23,7 +69,7 @@
         "description": "Un esquema relacional alojado en PostgreSQL de Supabase: la tabla Watch almacena el modelo, precio y las banderas digital/smart de cada producto, y se relaciona con la tabla Brand mediante una clave foránea brandId. Prisma gestiona las migraciones del esquema contra la base de datos."
       }
     ],
-    "order": 1,
+    "order": 2,
     "createdAt": "2021",
     "updatedAt": "2021"
   },
@@ -45,7 +91,7 @@
       }
     ],
     "features": [],
-    "order": 2,
+    "order": 3,
     "createdAt": "2025",
     "updatedAt": "2025"
   },
@@ -76,7 +122,7 @@
       }
     ],
     "features": [],
-    "order": 3,
+    "order": 4,
     "createdAt": "2024-11-06",
     "updatedAt": "2024-11-06"
   },
@@ -104,7 +150,7 @@
         "description": "Un GraphQL Playground interactivo para consultar la API, mostrado aquí ejecutando una query de ingredients que devuelve la lista completa de nombres de ingredientes almacenados en la base de datos."
       }
     ],
-    "order": 4,
+    "order": 5,
     "createdAt": "2023-03-06",
     "updatedAt": "2023-03-06"
   },
@@ -132,7 +178,7 @@
         "description": "Cada juego en la estantería del usuario es totalmente personalizable — los usuarios pueden agregar juegos, actualizar su estado, calificación y notas, y eliminar entradas por completo, todo limitado a su propia cuenta."
       }
     ],
-    "order": 5,
+    "order": 6,
     "createdAt": "2025",
     "updatedAt": "2025"
   },
@@ -160,7 +206,7 @@
         "description": "El sitio completo fue diseñado desde cero en Figma, utilizando componentes reutilizables de Figma para construir los layouts de escritorio y móvil antes de la implementación."
       }
     ],
-    "order": 6,
+    "order": 7,
     "createdAt": "2021",
     "updatedAt": "2021"
   }

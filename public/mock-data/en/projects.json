@@ -1,5 +1,51 @@
 [
   {
+    "id": "wms-ai-assistant",
+    "shortTitle": "WMS AI Copilot",
+    "title": "WMS AI Copilot - Warehouse Management AI Assistant",
+    "description": "Full-stack, real-time AI copilot for warehouse management built with Next.js, Express, Supabase, and the Vercel AI SDK, featuring streaming natural-language queries and an adaptive dashboard.",
+    "longDescription": "Architected and built a full-stack, production-shaped monorepo for a real-time AI copilot designed for modern warehouse management. Built for my portfolio instead of a formal job position, the platform lets warehouse admins run natural-language queries for stock levels, top sellers, and reorder alerts, returning token-by-token streaming answers or sortable data grids. Integrated Vercel AI SDK and Groq Cloud (Llama 3.x) for low-latency, deterministic tool-calling against curated, strictly typed database tools rather than raw query execution, keeping the LLM inside tight security and trust boundaries. Built a full operational split-view dashboard in Next.js App Router for real-time inventory, product, and order history tracking, and architected the app from the ground up with next-intl for fully bilingual (English/Spanish) conversational and UI flows. Structured as an npm workspaces monorepo with strict TypeScript typing across API, frontend, and AI tool definitions, backed by Jest test coverage.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Express",
+      "Groq Cloud (Llama 3.x)",
+      "Vercel AI SDK",
+      "Supabase (PostgreSQL)",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query & Table",
+      "next-intl",
+      "Jest",
+      "npm Workspaces"
+    ],
+    "githubUrl": "https://github.com/santiagopintus/wms-ai-assistant",
+    "liveUrl": "https://wms-ai-assistant-web.vercel.app/",
+    "featured": true,
+    "screenshots": [
+      {
+        "url": "/images/projects/wms-ai-assistant/wms-ai-assistant.png",
+        "altText": "WMS AI Copilot dashboard and chat interface",
+        "order": 1
+      }
+    ],
+    "features": [
+      {
+        "title": "Adaptive Visualization Pipeline",
+        "img": "/images/projects/wms-ai-assistant/it-renders-charts.png",
+        "description": "An intelligent frontend engine dynamically renders plain text, charts, or sortable TanStack tables based on the schema of the AI's query result — shown here answering a natural-language request with a live pie chart and category breakdown."
+      },
+      {
+        "title": "Sortable Data Grids",
+        "img": "/images/projects/wms-ai-assistant/it-renders-tables.png",
+        "description": "For tabular results, the copilot streams structured data straight into a sortable TanStack Table, letting admins reorder and scan inventory results without leaving the conversation."
+      }
+    ],
+    "order": 1,
+    "createdAt": "2026",
+    "updatedAt": "2026"
+  },
+  {
     "id": "la-montre",
     "shortTitle": "La Montre",
     "title": "La Montre - E-commerce Site",
@@ -23,7 +69,7 @@
         "description": "A relational schema hosted on Supabase PostgreSQL: the Watch table stores each product's model, price, and digital/smart flags, and links to the Brand table through a brandId foreign key. Prisma manages schema migrations against the database."
       }
     ],
-    "order": 1,
+    "order": 2,
     "createdAt": "2021",
     "updatedAt": "2021"
   },
@@ -45,7 +91,7 @@
       }
     ],
     "features": [],
-    "order": 2,
+    "order": 3,
     "createdAt": "2025",
     "updatedAt": "2025"
   },
@@ -76,7 +122,7 @@
       }
     ],
     "features": [],
-    "order": 3,
+    "order": 4,
     "createdAt": "2024-11-06",
     "updatedAt": "2024-11-06"
   },
@@ -104,7 +150,7 @@
         "description": "An interactive GraphQL Playground for querying the API, shown here running an ingredients query that returns the full list of ingredient names stored in the database."
       }
     ],
-    "order": 4,
+    "order": 5,
     "createdAt": "2023-03-06",
     "updatedAt": "2023-03-06"
   },
@@ -132,7 +178,7 @@
         "description": "Every game on a user's shelf is fully customizable — users can add games, update their status, rating, and notes, and remove entries entirely, all scoped to their own account."
       }
     ],
-    "order": 5,
+    "order": 6,
     "createdAt": "2025",
     "updatedAt": "2025"
   },
@@ -160,7 +206,7 @@
         "description": "The full site was designed from scratch in Figma, using reusable Figma components to build out both desktop and mobile layouts before implementation."
       }
     ],
-    "order": 6,
+    "order": 7,
     "createdAt": "2021",
     "updatedAt": "2021"
   }
