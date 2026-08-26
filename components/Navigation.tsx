@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname } from '@/i18n/routing';
+import { usePathname, routing } from '@/i18n/routing';
 import { NavLink } from '@/types';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
 import { useNavUnderline } from '@/hooks/useNavUnderline';
@@ -24,10 +24,13 @@ export default function Navigation({
   const locale = useLocale();
   const pathname = usePathname();
 
+  // "projects" links to its own page instead of scrolling to a home page section
+  const projectsHref = locale === routing.defaultLocale ? '/projects' : `/${locale}/projects`;
+
   // Navigation links configuration - generated from NAV_SECTIONS constant
   const navLinks: NavLink[] = NAV_SECTIONS.map((section) => ({
     label: t(section),
-    href: `/${locale}#${section}`,
+    href: section === 'projects' ? projectsHref : `/${locale}#${section}`,
   }));
 
   // Check if we're on the home page
@@ -39,7 +42,13 @@ export default function Navigation({
   const underlinePosition = useNavUnderline(isHomePage ? activeSection : null, navRef);
 
   // Handle nav link click - immediate underline feedback and smooth scroll
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string | undefined) => {
+    // Links to real routes (e.g. Projects) navigate normally - no scroll handling
+    if (!sectionId) {
+      onLinkClick?.(e.currentTarget.href);
+      return;
+    }
+
     setActiveSection(sectionId);
 
     // If on home page, prevent navigation and scroll smoothly
@@ -68,9 +77,11 @@ export default function Navigation({
       className={`flex justify-between md:justify-start items-center relative ${className}`}
     >
       {navLinks.map((link) => {
-        const sectionId = link.href.split('#')[1];
-        const ariaLabel = `Navigate to ${link.label} section`;
-        const title = `Jump to ${link.label}`;
+        const sectionId = link.href.includes('#') ? link.href.split('#')[1] : undefined;
+        const ariaLabel = sectionId
+          ? `Navigate to ${link.label} section`
+          : `Go to ${link.label} page`;
+        const title = sectionId ? `Jump to ${link.label}` : `View ${link.label}`;
         return (
           <a
             key={link.href}

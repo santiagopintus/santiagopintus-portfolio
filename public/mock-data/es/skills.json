@@ -148,5 +148,77 @@
     "name": "Playwright",
     "category": "Frontend",
     "order": 25
+  },
+  {
+    "id": "26",
+    "name": "Groq Cloud (Llama 3.x)",
+    "category": "Backend",
+    "order": 26
+  },
+  {
+    "id": "27",
+    "name": "Vercel AI SDK",
+    "category": "Backend",
+    "order": 27
+  },
+  {
+    "id": "28",
+    "name": "Supabase (PostgreSQL)",
+    "category": "Backend",
+    "order": 28
+  },
+  {
+    "id": "29",
+    "name": "npm Workspaces",
+    "category": "Backend",
+    "order": 29
+  },
+  {
+    "id": "30",
+    "name": "AI / LLM APIs",
+    "category": "Backend",
+    "order": 30
+  },
+  {
+    "id": "31",
+    "name": "shadcn/ui",
+    "category": "Frontend",
+    "order": 31
+  },
+  {
+    "id": "32",
+    "name": "TanStack Query & Table",
+    "category": "Frontend",
+    "order": 32
+  },
+  {
+    "id": "33",
+    "name": "Mermaid.js",
+    "category": "Frontend",
+    "order": 33
+  },
+  {
+    "id": "34",
+    "name": "D3.js",
+    "category": "Frontend",
+    "order": 34
+  },
+  {
+    "id": "35",
+    "name": "Virtualized Lists & Tables",
+    "category": "Frontend",
+    "order": 35
+  },
+  {
+    "id": "36",
+    "name": "Markdown Rendering",
+    "category": "Frontend",
+    "order": 36
+  },
+  {
+    "id": "37",
+    "name": "Storybook",
+    "category": "Frontend",
+    "order": 37
   }
 ]

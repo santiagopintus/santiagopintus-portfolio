@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import Arrow from './ui/Arrow';
 import Container from './Container';
 
@@ -28,10 +29,10 @@ const HeroGrid = () => {
 
         {/* Top Right - Projects CTA Button - 5/12 columns */}
         <div className="order-3 md:order-2 md:col-span-5 rounded-2xl flex items-center justify-center">
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             style={{ width: '50%' }}
-            aria-label="Jump to projects section - View my portfolio work"
+            aria-label="Go to projects page - View my portfolio work"
             title="View my projects and portfolio work"
           >
             <button
@@ -41,7 +42,7 @@ const HeroGrid = () => {
               <span className="text-xl">{t('cta')}</span>
               <Arrow />
             </button>
-          </a>
+          </Link>
         </div>
 
         {/* Bottom Left - Description - 5/12 columns */}

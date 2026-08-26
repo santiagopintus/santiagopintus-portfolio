@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, routing } from '@/i18n/routing';
 import { NavLink } from '@/types';
 import HamburgerIcon from '../HamburgerIcon';
 import Container from '../Container';
@@ -17,10 +17,13 @@ export default function Header() {
   const tHeader = useTranslations('header');
   const locale = useLocale();
 
+  // "projects" links to its own page instead of scrolling to a home page section
+  const projectsHref = locale === routing.defaultLocale ? '/projects' : `/${locale}/projects`;
+
   // Navigation links configuration - generated from NAV_SECTIONS constant
   const navLinks: NavLink[] = NAV_SECTIONS.map((section) => ({
     label: t(section),
-    href: `/${locale}#${section}`,
+    href: section === 'projects' ? projectsHref : `/${locale}#${section}`,
   }));
 
   // Detect scroll to toggle header background

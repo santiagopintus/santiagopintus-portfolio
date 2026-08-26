@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tailwindcss/utilities';
+@plugin '@tailwindcss/typography';
 
 :root {
   --background: #0a0a0a;
@@ -57,6 +58,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Screenshot grids for markdown-rendered content */
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  max-width: 800px;
+}
+
+.screenshot-grid:has(.screenshot-frame:only-child) {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 640px) {
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.screenshot-frame {
+  aspect-ratio: 16 / 9;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  overflow: hidden;
+}
+
+.screenshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
 }
 
 /* Scrollbar hiding utility for carousel */
